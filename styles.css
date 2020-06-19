@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Fjord+One&display=swap');
+
+@import url("./fonts/ScriptMTBold.ttf");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Fjord One", serif;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    background: rgba(33, 39, 56, 0.6);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.nav-links li {
+    margin: 0 60px;
+    overflow: hidden;
+    max-width: 120px;
+    max-height: 100%;
+    display: flex;
+}
+
+.main-box {
+    width: 240px;
+    height: 100%;
+    transition: 400ms ease-in transform;
+}
+
+.main-box:hover {
+    transform: translateY(-100%);
+    transition: 400ms ease-in transform;
+    height: 100%;
+}
+
+.box {
+    width: 120px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms ease-in transform;
+}
+
+.box i {
+    font-size: 50px;
+    width: 100%;
+    color: #F97068;
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color:#F97068;
+    font-family: "Fjord One", serif;
+    font-size: 25px;
+}
+
+.logo {
+    margin-right: auto;
+    padding: 50px;
+    font-size: 40px;
+    font-family: "Script MT"
+}
+
+.showcase {
+    background-color: #212738;
+    background-image: url(./images/balance.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-header {
+    color: white;
+    font-family: "Fjord One", serif;
+    font-size: 50px;
+    font-weight: 500;
+    position: relative;
+    width: 60%;
+    text-align: center;
+    line-height: 100px;
+}
+
+.main-button {
+    background-color: #212738;
+    color: #F97068;
+    border-radius: 25px;
+    width: 20%;
+    border: none;
+    font-size: 25px;
+    padding: 20px;
+    font-family: "Fjord One", serif;
+    margin-top: 25vh;
+    text-align: center;
+    text-decoration: none;
+}
+
