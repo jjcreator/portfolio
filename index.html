@@ -9,13 +9,19 @@
 </head>
 <body>
     <header>
-        <nav class="nav">
-            <span class="logo">jjcreator.dev</span>
+        <nav class="nav top-bar">
+            <span class="logo"><a href="#main">jjcreator.dev</a></span>
             <ul class="nav-links">
                 <li>
                     <div class="main-box">
                         <div class="box"><i class="far fa-keyboard"></i></div>
                         <div class="box"><a href="#projects" class="link">Projects</a></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="main-box">
+                        <div class="box"><i class="fas fa-code"></i></div>
+                        <div class="box"><a href="#skills" class="link">Skills</a></div>
                     </div>
                 </li>
                 <li>
@@ -30,14 +36,36 @@
                         <div class="box"><a href="#contact" class="link">Contact</a></div>
                     </div>
                 </li>
-    
             </ul>
         </nav>
     </header>
-    <section class="showcase">
-        <h1 class="main-header">Hi I'm Kuba, a <br> front-end web dev</h1>
-        <a href="#projects" class="main-button">take a look @ my work</a>
-    </section>
+    <div class="main-wrapper">
+        <div class="arrow" id="left"><</div>
+        <div class="arrow" id="right">></div>
+        <div class="arrow" id="bottom">\/</div>
+        <div class="arrow" id="top">/\</div>
+        <div id="scroll-wrapper">
+            <section class="showcase" id="main">
+                <h1 class="main-header">Hi I'm Kuba, a <br> front-end web dev</h1>
+                <a href="#projects" class="main-button">take a look @ my work</a>
+            </section>
+            <section class="section" id="projects">
+                <h2 class="section-header">My projects</h2>
+                <div></div>
+            </section>
+            <section class="section" id="about">
+                <h2 class="section-header">About me</h2>
+                <div></div>
+            </section>
+        </div>
+    </div>
+    <div class="nav right-bar"></div>
+    <div class="nav left-bar"></div>
+    <footer class="nav bottom-bar">
+        <span>jjcreator8@gmail.com</span>
+        <div class="flag-container"><img class="flag" id="english" src="images/ENG1.svg" alt="british flag"/></div>
+        <div class="flag-container"><img class="flag" id="polish" src="images/PL1.svg" alt="polish flag"/></div>
+    </footer>
     <script src="./app.js"></script>
 </body>
 </html>

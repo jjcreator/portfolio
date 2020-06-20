@@ -2,26 +2,105 @@
 
 @import url("./fonts/ScriptMTBold.ttf");
 
+:root {
+    --primary-color: #6b3a38;
+    --secondary-color: #212738;
+    --text-color: #fff;
+    --attention-color: #F97068;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 body {
     font-family: "Fjord One", serif;
+    width: 100%;
+    max-height: 100vh
+}
+
+.main-wrapper {
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#scroll-wrapper {
+    width: 300%;
+    height: 200vh;
+    transition: transform 500ms ease;
+    display: grid;
+    grid-template: 1fr 1fr/ 1fr 1fr 1fr;
+    
+}
+
+#about {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+/* #scroll-wrapper:hover {
+    transform: translateX(-100vw);
+} */
+
+.arrow {
+    width: 5%;
+    height: 50px;
+    background-color: var(--primary-color);
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    padding: 0;
+    border: 3px solid var(--attention-color);
+    color: var(--attention-color)
+
+}
+
+#left {
+    top: 50%;
+    left: 0;
+}
+
+#right {
+    top: 50%;
+    right: 0;
+}
+
+#top {
+    top: 0%;
+    left: 47.5%;
+}
+
+#bottom {
+    bottom: 0%;
+    left: 47.5%;
+    
 }
 
 .nav {
     position: fixed;
-    top: 0;
     background: rgba(33, 39, 56, 0.6);
+    background-color: var(--primary-color);
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 10vh;
-    color: white;
+    color: var(--text-color);
+    z-index: 2;
+}
+
+.top-bar {
+    top: 0;
 }
 
 .nav-links {
@@ -31,7 +110,7 @@ body {
 }
 
 .nav-links li {
-    margin: 0 60px;
+    margin: 0 20px;
     overflow: hidden;
     max-width: 120px;
     max-height: 100%;
@@ -60,15 +139,15 @@ body {
 }
 
 .box i {
-    font-size: 50px;
+    font-size: 35px;
     width: 100%;
-    color: #F97068;
+    color: var(--attention-color);
     text-align: center;
 }
 
 .link {
     text-decoration: none;
-    color:#F97068;
+    color:var(--attention-color);
     font-family: "Fjord One", serif;
     font-size: 25px;
 }
@@ -77,11 +156,11 @@ body {
     margin-right: auto;
     padding: 50px;
     font-size: 40px;
-    font-family: "Script MT"
+    font-family: "Script MT";
 }
 
 .showcase {
-    background-color: #212738;
+    background-color: var(--secondary-color);
     background-image: url(./images/balance.jpg);
     background-size: cover;
     background-position: center;
@@ -91,10 +170,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: transform 500ms ease-in;
 }
 
 .main-header {
-    color: white;
+    color: var(--text-color);
     font-family: "Fjord One", serif;
     font-size: 50px;
     font-weight: 500;
@@ -105,8 +185,8 @@ body {
 }
 
 .main-button {
-    background-color: #212738;
-    color: #F97068;
+    background-color: var(--secondary-color);
+    color: var(--attention-color);
     border-radius: 25px;
     width: 20%;
     border: none;
@@ -117,4 +197,67 @@ body {
     text-align: center;
     text-decoration: none;
 }
+
+.bottom-bar {
+    bottom: 0;
+    justify-content: flex-end;
+    padding-right: 5%;
+}
+
+.flag-container {
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border: 2px solid var(--text-color);
+    border-radius: 20%;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px black;
+    transition: transform 200ms ease-in;
+    cursor: pointer;
+}
+
+.flag-container:hover {
+    transform: translateY(10%);
+}
+
+.flag {
+    width: 200%;
+}
+
+.bottom-bar span {
+    font-size: 20px;
+}
+
+.left-bar {
+    left: 0;
+    width: 10vh;
+    height: 80vh;
+    top: 10vh;
+}
+.right-bar {
+    width: 10vh;
+    height: 80vh;
+    right: 0;
+    top: 10vh;
+    z-index: 0;
+}
+
+.section {
+    height: 100vh;
+    background-color: var(--secondary-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+
 
