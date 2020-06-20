@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>jjcreator web dev</title>
 </head>
@@ -15,37 +15,37 @@
                 <li>
                     <div class="main-box">
                         <div class="box"><i class="far fa-keyboard"></i></div>
-                        <div class="box"><a href="#projects" class="link">Projects</a></div>
+                        <div class="box"><span class="link" id="projects-link">Projects</span></div>
                     </div>
                 </li>
                 <li>
                     <div class="main-box">
                         <div class="box"><i class="fas fa-code"></i></div>
-                        <div class="box"><a href="#skills" class="link">Skills</a></div>
+                        <div class="box"><span class="link" id="skills-link">Skills</span></div>
                     </div>
                 </li>
                 <li>
                     <div class="main-box">
                         <div class="box"><i class="fas fa-user-astronaut"></i></div>
-                        <div class="box"><a href="#about" class="link">About me</a></div>
+                        <div class="box"><span class="link" id="about-link">About me</span></div>
                     </div>
                 </li>
                 <li>
                     <div class="main-box">
                         <div class="box"><i class="far fa-envelope"></i></div>
-                        <div class="box"><a href="#contact" class="link">Contact</a></div>
+                        <div class="box"><span class="link" id="contact-link">Contact</span></div>
                     </div>
                 </li>
             </ul>
         </nav>
     </header>
     <div class="main-wrapper">
-        <div class="arrow" id="left"><</div>
+        <div class="arrow" id="left">&lt;</div>
         <div class="arrow" id="right">></div>
         <div class="arrow" id="bottom">\/</div>
         <div class="arrow" id="top">/\</div>
         <div id="scroll-wrapper">
-            <section class="showcase" id="main">
+            <section class="section" id="main">
                 <h1 class="main-header">Hi I'm Kuba, a <br> front-end web dev</h1>
                 <a href="#projects" class="main-button">take a look @ my work</a>
             </section>
@@ -55,6 +55,14 @@
             </section>
             <section class="section" id="about">
                 <h2 class="section-header">About me</h2>
+                <div></div>
+            </section>
+            <section class="section" id="skills">
+                <h2 class="section-header">My skills</h2>
+                <div></div>
+            </section>
+            <section class="section" id="contact">
+                <h2 class="section-header">Contact me</h2>
                 <div></div>
             </section>
         </div>

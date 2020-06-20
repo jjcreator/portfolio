@@ -1,6 +1,4 @@
 const scrollContainer = document.querySelector("#scroll-wrapper");
-console.log(scrollContainer);
-
 const bottomArrow = document.querySelector("#bottom");
 const topArrow = document.querySelector("#top");
 const leftArrow = document.querySelector("#left");
@@ -12,10 +10,6 @@ topArrow.style.display = "none";
 
 bottomArrow.addEventListener("click", ()=> {
     currentRow++;
-    topArrow.style.display = "flex";
-    bottomArrow.style.display = "none";
-    leftArrow.style.display = "none";
-    rightArrow.style.display = "none";
     changePosition("vertical");
 });
 
@@ -30,7 +24,6 @@ topArrow.addEventListener("click", ()=> {
 
 leftArrow.addEventListener("click", ()=> {
     currentColumn++;
-    
     leftArrow.style.display = "none";
     bottomArrow.style.display = "none";
     changePosition("horizontal");
@@ -38,7 +31,6 @@ leftArrow.addEventListener("click", ()=> {
 
 rightArrow.addEventListener("click", ()=> {
     currentColumn--;
-    
     rightArrow.style.display = "none";
     bottomArrow.style.display = "none";
     changePosition("horizontal");
@@ -49,32 +41,53 @@ const changePosition = direction => {
         scrollContainer.style.transform = `translateY(-${currentRow * 100}vh)`
     }
     else scrollContainer.style.transform = `translateX(${currentColumn * 100}vw)`
-    if (currentColumn === 0 && currentRow === 0) {
+    if (currentColumn === 1 && currentRow === 0) {
         bottomArrow.style.display = "flex";
         leftArrow.style.display = "flex";
         rightArrow.style.display = "flex";
     }
 }
 
+const mouseScroll = e => {
+        if(e.deltaY > 0) {
+            currentRow++;
+            changePosition("vertical");
+        }
+        else {
+            currentRow--;
+            changePosition("vertical");
+        }
+        window.removeEventListener("wheel", mouseScroll);
+        setTimeout(()=> {
+            window.addEventListener("wheel", mouseScroll);
+        }, 600)
+}
+
+window.addEventListener("wheel", mouseScroll);
+
 window.addEventListener("keydown", e => {
     let keyPressed = e.key;
     switch(keyPressed) {
-        case "ArrowDown": if(currentRow === 0) {
+        case "ArrowDown": 
             currentRow++;
-            topArrow.style.display = "flex";
-            bottomArrow.style.display = "none";
-            leftArrow.style.display = "none";
-            rightArrow.style.display = "none";
             changePosition("vertical");
+            break;
+        case "ArrowUp":
+            currentRow--;
+            changePosition("vertical");
+            break;
+        case "ArrowLeft": if(currentColumn != 1) {
+            currentColumn++;
+            leftArrow.style.display = "none";
+            bottomArrow.style.display = "none";
+            changePosition("horizontal");
         }
         break;
-        case "ArrowUp": if(currentRow === 1) {
-            currentRow--;
-            topArrow.style.display = "none";
-            bottomArrow.style.display = "flex";
-            leftArrow.style.display = "flex";
-            rightArrow.style.display = "flex";
-            changePosition("vertical");
+        case "ArrowRight": if(currentColumn != -1) {
+            currentColumn++;
+            rightArrow.style.display = "none";
+            bottomArrow.style.display = "none";
+            changePosition("horizontal");
         }
         break;
         

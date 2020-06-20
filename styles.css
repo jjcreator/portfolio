@@ -23,6 +23,79 @@ body {
     max-height: 100vh
 }
 
+/* ---------------- Navigation ---------------- */
+
+.nav {
+    position: fixed;
+    background: rgba(33, 39, 56, 0.6);
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+    color: var(--text-color);
+    z-index: 2;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.nav-links li {
+    margin: 0 20px;
+    overflow: hidden;
+    max-width: 120px;
+    max-height: 100%;
+    display: flex;
+}
+
+.box {
+    width: 120px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms ease-in transform;
+}
+
+.box i {
+    font-size: 35px;
+    width: 100%;
+    color: var(--attention-color);
+    text-align: center;
+}
+
+.link {
+    color: var(--attention-color);
+    font-family: "Fjord One", serif;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.logo {
+    margin-right: auto;
+    padding: 50px;
+    font-size: 40px;
+    font-family: "Script MT";
+}
+
+.main-box {
+    width: 240px;
+    height: 100%;
+    transition: 400ms ease-in transform;
+}
+
+.main-box:hover {
+    transform: translateY(-100%);
+    transition: 400ms ease-in transform;
+    height: 100%;
+}
+
+/* ---------------- Scrollable Frame ---------------- */
+
 .main-wrapper {
     overflow: hidden;
     height: 100vh;
@@ -31,22 +104,14 @@ body {
 }
 
 #scroll-wrapper {
-    width: 300%;
-    height: 200vh;
-    transition: transform 500ms ease;
+    width: 100%;
+    height: 300vh;
+    transition: transform 1.2s cubic-bezier(0.13, 1.65, 1, 0.99);
     display: grid;
-    grid-template: 1fr 1fr/ 1fr 1fr 1fr;
-    
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    position: relative;
 }
-
-#about {
-    grid-column: 2/3;
-    grid-row: 1/2;
-}
-
-/* #scroll-wrapper:hover {
-    transform: translateX(-100vw);
-} */
 
 .arrow {
     width: 5%;
@@ -62,7 +127,6 @@ body {
     padding: 0;
     border: 3px solid var(--attention-color);
     color: var(--attention-color)
-
 }
 
 #left {
@@ -83,125 +147,30 @@ body {
 #bottom {
     bottom: 0%;
     left: 47.5%;
-    
-}
-
-.nav {
-    position: fixed;
-    background: rgba(33, 39, 56, 0.6);
-    background-color: var(--primary-color);
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 10vh;
-    color: var(--text-color);
-    z-index: 2;
 }
 
 .top-bar {
     top: 0;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
-}
-
-.nav-links li {
-    margin: 0 20px;
-    overflow: hidden;
-    max-width: 120px;
-    max-height: 100%;
-    display: flex;
-}
-
-.main-box {
-    width: 240px;
-    height: 100%;
-    transition: 400ms ease-in transform;
-}
-
-.main-box:hover {
-    transform: translateY(-100%);
-    transition: 400ms ease-in transform;
-    height: 100%;
-}
-
-.box {
-    width: 120px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 400ms ease-in transform;
-}
-
-.box i {
-    font-size: 35px;
-    width: 100%;
-    color: var(--attention-color);
-    text-align: center;
-}
-
-.link {
-    text-decoration: none;
-    color:var(--attention-color);
-    font-family: "Fjord One", serif;
-    font-size: 25px;
-}
-
-.logo {
-    margin-right: auto;
-    padding: 50px;
-    font-size: 40px;
-    font-family: "Script MT";
-}
-
-.showcase {
-    background-color: var(--secondary-color);
-    background-image: url(./images/balance.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: transform 500ms ease-in;
-}
-
-.main-header {
-    color: var(--text-color);
-    font-family: "Fjord One", serif;
-    font-size: 50px;
-    font-weight: 500;
-    position: relative;
-    width: 60%;
-    text-align: center;
-    line-height: 100px;
-}
-
-.main-button {
-    background-color: var(--secondary-color);
-    color: var(--attention-color);
-    border-radius: 25px;
-    width: 20%;
-    border: none;
-    font-size: 25px;
-    padding: 20px;
-    font-family: "Fjord One", serif;
-    margin-top: 25vh;
-    text-align: center;
-    text-decoration: none;
-}
-
 .bottom-bar {
     bottom: 0;
     justify-content: flex-end;
     padding-right: 5%;
+}
+
+.left-bar {
+    left: 0;
+    width: 10vh;
+    height: 80vh;
+    top: 10vh;
+}
+.right-bar {
+    width: 10vh;
+    height: 80vh;
+    right: 0;
+    top: 10vh;
+    z-index: 0;
 }
 
 .flag-container {
@@ -231,19 +200,8 @@ body {
     font-size: 20px;
 }
 
-.left-bar {
-    left: 0;
-    width: 10vh;
-    height: 80vh;
-    top: 10vh;
-}
-.right-bar {
-    width: 10vh;
-    height: 80vh;
-    right: 0;
-    top: 10vh;
-    z-index: 0;
-}
+
+/* ---------------- Sections ---------------- */
 
 .section {
     height: 100vh;
@@ -254,10 +212,59 @@ body {
     align-items: center;
 }
 
+#main {
+    background-color: var(--secondary-color);
+    background-image: url(./images/balance.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.main-header {
+    color: var(--text-color);
+    font-family: "Fjord One", serif;
+    font-size: 50px;
+    font-weight: 500;
+    position: relative;
+    width: 60%;
+    text-align: center;
+    line-height: 100px;
+}
+
+.main-button {
+    background-color: var(--secondary-color);
+    color: var(--attention-color);
+    border-radius: 25px;
+    width: 20%;
+    border: none;
+    font-size: 25px;
+    padding: 20px;
+    font-family: "Fjord One", serif;
+    margin-top: 25vh;
+    text-align: center;
+    text-decoration: none;
+}
+
+#about {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
 #projects {
     grid-column: 1/2;
     grid-row: 2/3;
 }
 
+#skills {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
 
-
+#contact {
+    grid-row: 5/6
+}
