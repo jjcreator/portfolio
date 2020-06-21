@@ -48,18 +48,19 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    justify-content: space-around;
+    justify-content: center;
     height: 100%;
+    width: 50%;
 }
 
 .link-box {
     height: 100%;
     transition: 400ms ease-in transform;
     overflow: hidden;
-    margin: 0 40px;
-    max-width: 25%;
     display: grid;
     grid-template: 1fr/1fr;
+    width: 20%;
+    
 }
 
 .link-box:hover > .link-box-half{
