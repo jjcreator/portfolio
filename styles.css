@@ -23,6 +23,14 @@ body {
     max-height: 100vh
 }
 
+.english {
+    display: block;
+}
+
+.polish {
+    display: none;
+}
+
 /* ---------------- Navigation ---------------- */
 
 .nav {
@@ -34,7 +42,6 @@ body {
     justify-content: flex-end;
     align-items: center;
     height: 10vh;
-    color: var(--text-color);
     z-index: 2;
 }
 
@@ -42,30 +49,41 @@ body {
     display: flex;
     list-style: none;
     justify-content: space-around;
-}
-
-.nav-links li {
-    margin: 0 20px;
-    overflow: hidden;
-    max-width: 120px;
-    max-height: 100%;
-    display: flex;
-}
-
-.box {
-    width: 120px;
     height: 100%;
+}
+
+.link-box {
+    height: 100%;
+    transition: 400ms ease-in transform;
+    overflow: hidden;
+    margin: 0 40px;
+    max-width: 25%;
+    display: grid;
+    grid-template: 1fr/1fr;
+}
+
+.link-box:hover > .link-box-half{
+    transform: translateY(-100%);
+    transition: 400ms ease-in transform;
+}
+
+.link-box-half {
+    height: 10vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 400ms ease-in transform;
 }
 
-.box i {
+.link-box-half i {
     font-size: 35px;
-    width: 100%;
     color: var(--attention-color);
     text-align: center;
+}
+
+.link-box-half span {
+    color: var(--attention-color);
 }
 
 .link {
@@ -77,22 +95,15 @@ body {
 
 .logo {
     margin-right: auto;
-    padding: 50px;
+    padding: 10px 50px;
     font-size: 40px;
     font-family: "Script MT";
+    background: none;
+    border: none;
+    color: var(--text-color);
 }
 
-.main-box {
-    width: 240px;
-    height: 100%;
-    transition: 400ms ease-in transform;
-}
 
-.main-box:hover {
-    transform: translateY(-100%);
-    transition: 400ms ease-in transform;
-    height: 100%;
-}
 
 /* ---------------- Scrollable Frame ---------------- */
 
@@ -106,7 +117,7 @@ body {
 #scroll-wrapper {
     width: 100%;
     height: 300vh;
-    transition: transform 1.2s cubic-bezier(0.13, 1.65, 1, 0.99);
+    transition: ease-in 1s transform;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -126,7 +137,8 @@ body {
     font-size: 30px;
     padding: 0;
     border: 3px solid var(--attention-color);
-    color: var(--attention-color)
+    color: var(--attention-color);
+    display: none;
 }
 
 #left {
@@ -212,7 +224,9 @@ body {
     align-items: center;
 }
 
-#main {
+/* ---------------- Home page ---------------- */
+
+.main {
     background-color: var(--secondary-color);
     background-image: url(./images/balance.jpg);
     background-size: cover;
@@ -248,23 +262,24 @@ body {
     margin-top: 25vh;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
 }
 
-#about {
+.about {
     grid-column: 1/2;
     grid-row: 4/5;
 }
 
-#projects {
+.projects {
     grid-column: 1/2;
     grid-row: 2/3;
 }
 
-#skills {
+.skills {
     grid-column: 1/2;
     grid-row: 3/4;
 }
 
-#contact {
+.contact {
     grid-row: 5/6
 }

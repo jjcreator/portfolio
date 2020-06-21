@@ -1,95 +1,115 @@
+// Scroll container navigation
+
 const scrollContainer = document.querySelector("#scroll-wrapper");
 const bottomArrow = document.querySelector("#bottom");
 const topArrow = document.querySelector("#top");
-const leftArrow = document.querySelector("#left");
-const rightArrow = document.querySelector("#right")
+const linksArray = Array.from(document.querySelectorAll(".link"));
 let currentRow = 0;
-let currentColumn = 0;
 
-topArrow.style.display = "none";
+linksArray.forEach(link => {
+    link.addEventListener("click", ()=> {
+        currentRow = linksArray.indexOf(link);
+        scrollContainer.style.transition = "none";
+        changePosition();
+        setTimeout(()=> {
+            scrollContainer.style.transition = "ease-in 1s transform"
+        }, 1)
+    })
+});
 
 bottomArrow.addEventListener("click", ()=> {
-    currentRow++;
-    changePosition("vertical");
+    changeRow("down");
+    changePosition();
 });
 
 topArrow.addEventListener("click", ()=> {
-    currentRow--;
-    topArrow.style.display = "none";
-    bottomArrow.style.display = "flex";
-    leftArrow.style.display = "flex";
-    rightArrow.style.display = "flex";
-    changePosition("vertical");
+    changeRow("up");
+    changePosition();
 });
 
-leftArrow.addEventListener("click", ()=> {
-    currentColumn++;
-    leftArrow.style.display = "none";
-    bottomArrow.style.display = "none";
-    changePosition("horizontal");
-});
-
-rightArrow.addEventListener("click", ()=> {
-    currentColumn--;
-    rightArrow.style.display = "none";
-    bottomArrow.style.display = "none";
-    changePosition("horizontal");
-});
-
-const changePosition = direction => {
-    if (direction === "vertical") {
-        scrollContainer.style.transform = `translateY(-${currentRow * 100}vh)`
+const changeRow = direction => {
+    switch(direction) {
+        case "up": currentRow > 0 ? currentRow--: null;
+        break;
+        case "down": currentRow < 4 ? currentRow++: null;
+        break;
+        default: break;
     }
-    else scrollContainer.style.transform = `translateX(${currentColumn * 100}vw)`
-    if (currentColumn === 1 && currentRow === 0) {
-        bottomArrow.style.display = "flex";
-        leftArrow.style.display = "flex";
-        rightArrow.style.display = "flex";
-    }
+}
+
+const changePosition = () => {
+    scrollContainer.style.transform = `translateY(-${currentRow * 100}vh)`
 }
 
 const mouseScroll = e => {
         if(e.deltaY > 0) {
-            currentRow++;
-            changePosition("vertical");
+            changeRow("down");
+            changePosition();
         }
         else {
-            currentRow--;
-            changePosition("vertical");
+            changeRow("up");
+            changePosition();
         }
         window.removeEventListener("wheel", mouseScroll);
         setTimeout(()=> {
             window.addEventListener("wheel", mouseScroll);
-        }, 600)
+        }, 500)
 }
 
 window.addEventListener("wheel", mouseScroll);
 
 window.addEventListener("keydown", e => {
+    window.removeEventListener("wheel", mouseScroll);
     let keyPressed = e.key;
     switch(keyPressed) {
         case "ArrowDown": 
-            currentRow++;
-            changePosition("vertical");
+            changeRow("down");
+            changePosition();
             break;
         case "ArrowUp":
-            currentRow--;
-            changePosition("vertical");
+            changeRow("up");
+            changePosition();
             break;
-        case "ArrowLeft": if(currentColumn != 1) {
-            currentColumn++;
-            leftArrow.style.display = "none";
-            bottomArrow.style.display = "none";
-            changePosition("horizontal");
-        }
-        break;
-        case "ArrowRight": if(currentColumn != -1) {
-            currentColumn++;
-            rightArrow.style.display = "none";
-            bottomArrow.style.display = "none";
-            changePosition("horizontal");
-        }
-        break;
-        
+        default: break;
     }
+});
+
+window.addEventListener("keyup", ()=> {
+    window.addEventListener("wheel", mouseScroll);
+});
+
+// Main page 
+
+const mainButton = document.querySelector(".main-button");
+mainButton.addEventListener("click", ()=> {
+    currentRow = 1;
+    changePosition();
+})
+
+// Language change 
+
+const flagsArray = document.querySelectorAll(".flag");
+const english = document.querySelectorAll(".english");
+const polish = document.querySelectorAll(".polish");
+
+flagsArray.forEach(flag => {
+    flag.addEventListener("click", e => {
+        if(e.target.id === "english") {
+            english.forEach(text => {
+                text.style.display = "block";
+            })
+            polish.forEach(text => {
+                text.style.display = "none"
+            })
+        }
+        else {
+            english.forEach(text => {
+                text.style.display = "none";
+            })
+            polish.forEach(text => {
+                text.style.display = "block"
+            })
+        }
+
+    })
 })
