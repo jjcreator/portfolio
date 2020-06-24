@@ -20,7 +20,7 @@
 body {
     font-family: "Fjord One", serif;
     width: 100%;
-    max-height: 100vh
+    max-height: 100vh;
 }
 
 .english {
@@ -50,8 +50,10 @@ body {
     list-style: none;
     justify-content: center;
     height: 100%;
-    width: 50%;
+    width: 40%;
+    margin-right: 10vh;
 }
+
 
 .link-box {
     height: 100%;
@@ -59,7 +61,7 @@ body {
     overflow: hidden;
     display: grid;
     grid-template: 1fr/1fr;
-    width: 20%;
+    width: 25%;
     
 }
 
@@ -142,16 +144,6 @@ body {
     display: none;
 }
 
-#left {
-    top: 50%;
-    left: 0;
-}
-
-#right {
-    top: 50%;
-    right: 0;
-}
-
 #top {
     top: 0%;
     left: 47.5%;
@@ -223,6 +215,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10vh;
 }
 
 /* ---------------- Home page ---------------- */
@@ -283,4 +276,91 @@ body {
 
 .contact {
     grid-row: 5/6
+}
+
+/* ---------------- Projects ---------------- */
+
+.projects-grid {
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: grid;
+    grid-template: 1fr 2fr 2fr/1fr 1fr 1fr;
+    grid-template-areas: ". | title | .";
+    background-color: var(--secondary-color);
+    grid-gap: 10px;
+    padding: 10px;
+    justify-items: center;
+}
+
+.projects-grid h2 {
+    grid-row: 1/2;
+    grid-column: 1/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+
+.projects-grid-item {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    position: relative;
+    cursor: pointer;
+    box-shadow: transparent 0px 0px 0px;
+    background-color: #6b3a38;
+    transition: 200ms linear all;
+    z-index: 1;
+}
+
+.projects-grid-item img {
+    width: 50%;
+    position: relative;
+}
+
+.projects-grid-item:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: black 10px 10px 0px;
+    
+}
+
+.projects-grid-item::after, .projects-grid-item::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: 200ms linear transform;
+    border-color: inherit;
+}
+
+.projects-grid-item::before {
+    bottom: 0;
+    left: 0;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid black;
+    border-top: 5px solid black;
+    
+}
+
+.projects-grid-item::after {
+    top: 0;
+    right: 0;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent;
+}
+
+.projects-grid-item:hover::before {
+    transform: translateY(10px);
+    
+}
+
+.projects-grid-item:hover::after {
+    transform: translateX(10px);
+    
 }
