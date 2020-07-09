@@ -31,7 +31,7 @@ const changeRow = direction => {
     switch(direction) {
         case "up": currentRow > 0 ? currentRow--: null;
         break;
-        case "down": currentRow < 4 ? currentRow++: null;
+        case "down": currentRow < 3 ? currentRow++: null;
         break;
         default: break;
     }
@@ -113,3 +113,9 @@ flagsArray.forEach(flag => {
 
     })
 })
+
+// Contact form 
+
+const submitButton = document.querySelector(".submit")
+
+submitButton.addEventListener("click", e => e.preventDefault())
