@@ -18,8 +18,7 @@
 
 body {
     font-family: "Fjord One", serif;
-    width: 100%;
-    max-height: 100vh;
+    position: relative;
 }
 
 .english {
@@ -54,42 +53,15 @@ body {
     width: 40%;
 }
 
-
 .link-box {
     height: 100%;
-    transition: 400ms ease-in transform;
-    overflow: hidden;
-    display: grid;
-    grid-template: 1fr/1fr;
     width: 25%;
 }
 
-.link-box:hover > .link-box-half{
-    transform: translateY(-100%);
-    transition: 400ms ease-in transform;
-}
-
-.link-box-half {
-    height: 10vh;
-    width: 100%;
-    transition: 400ms ease-in transform;
-}
-
-.link-box-half i {
-    font-size: 35px;
-    color: var(--attention-color);
-    text-align: center;
-}
-
-.link-box-half span {
-    color: var(--attention-color);
-}
-
-.link {
-    color: var(--attention-color);
+.link-box span {
     font-family: "Fjord One", serif;
-    font-size: 25px;
-    cursor: pointer;
+    color: var(--attention-color);
+    font-size: 20px;
 }
 
 .logo {
@@ -102,49 +74,10 @@ body {
     color: var(--text-color);
 }
 
-
-
-/* ---------------- Scrollable Frame ---------------- */
+/* ---------------- Frame ---------------- */
 
 .main-wrapper {
-    overflow: hidden;
-    height: 100vh;
-    width: 100%;
     position: relative;
-}
-
-#scroll-wrapper {
-    width: 100%;
-    height: 300vh;
-    transition: ease-in 1s transform;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    position: relative;
-}
-
-.arrow {
-    width: 5%;
-    height: 50px;
-    background-color: var(--primary-color);
-    position: absolute;
-    z-index: 3;
-    cursor: pointer;
-    font-size: 30px;
-    padding: 0;
-    border: 3px solid var(--attention-color);
-    color: var(--attention-color);
-    display: none;
-}
-
-#top {
-    top: 0%;
-    left: 47.5%;
-}
-
-#bottom {
-    bottom: 0%;
-    left: 47.5%;
 }
 
 .top-bar {
@@ -155,6 +88,7 @@ body {
     bottom: 0;
     justify-content: flex-end;
     padding-right: 5%;
+    display: none;
 }
 
 .left-bar {
@@ -162,6 +96,7 @@ body {
     width: 10vh;
     height: 80vh;
     top: 10vh;
+    display: none;
 }
 .right-bar {
     width: 10vh;
@@ -169,6 +104,7 @@ body {
     right: 0;
     top: 10vh;
     z-index: 0;
+    display: none;
 }
 
 .flag-container {
@@ -261,24 +197,20 @@ body {
 }
 
 .about {
-    grid-column: 1/2;
-    grid-row: 4/5;
     flex-direction: column;
 }
 
 .projects {
-    grid-column: 1/2;
-    grid-row: 2/3;
+    position: relative;
+    flex-direction: column;
 }
 
 .skills {
-    grid-column: 1/2;
-    grid-row: 3/4;
     flex-direction: column;
 }
 
 .contact {
-    grid-row: 5/6
+    
 }
 
 /* ---------------- Projects ---------------- */
@@ -288,9 +220,9 @@ body {
     height: 100%;
     color: black;
     display: grid;
-    grid-template: 1fr 2fr 2fr/1fr 1fr 1fr;
+    grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
     background-color: var(--secondary-color);
-    grid-gap: 25px;
+    grid-gap: 40px;
     padding: 40px;
     justify-items: center;
 }
@@ -305,8 +237,8 @@ body {
     cursor: pointer;
     transition: 150ms ease-in all;
     z-index: 1;
-    width: 60%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     
 }
 
@@ -405,6 +337,71 @@ body {
 
 .projects-grid-wrapper:hover .projects-grid-item:before, .projects-grid-item:focus .projects-grid-item:before {
     bottom:-10px;
+}
+
+/* Projects modal */
+
+.modal {
+    position: fixed;
+    top: 12.5%;
+    left: 12.5%;
+    width: 75%;
+    height: 75%;
+    padding: inherit;
+    border: 2px solid red;
+    box-shadow: 4px 4px 10px black;
+    background-color: inherit;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 101;
+}
+
+.modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.486);
+    z-index: 100;
+
+}
+
+.modal-row:first-child {
+    margin-bottom: 50px;
+}
+
+.modal-title {
+    font-size: 25px;
+    padding: 20px;
+}
+
+.modal-exit {
+
+
+}
+
+.modal-exit i {
+    font-size: 40px;
+    color: var(--attention-color);
+    cursor: pointer;
+}
+
+.modal img {
+    width: 35%;
+    margin: 20px;
+}
+
+.modal-row {
+    width: 100%;
+    padding: 20px;
+}
+
+.modal-row-column {
+    flex-direction: column;
+    width: 60%;
 }
 
 /* About */
