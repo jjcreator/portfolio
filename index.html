@@ -8,67 +8,67 @@
 </head>
 <body>
     <div class="modal-background"></div>
-    <header>
-        <nav class="nav flex top-bar">
+        <section class="section main flex">
+        <h1 class="main-header">jjcreator <br> <span>front-end web developer</span></h1>
+        <a href="#projects" class="main-button link">portfolio</a>
+    </section>
+    <div class="nav-container">
+        <nav class="nav flex sticky-header">
             <a href="#" class="link logo">jjcreator.dev</a>
             <ul class="nav-links flex">
                 <li class="link-box flex">
-                    <a href="#projects">
-                        <span class="english">Projects</span>
+                    <a class="link" href="#projects">
+                        <span class="english">Portfolio</span>
                         <span class="polish">Projekty</span> 
                     </a>
                 </li>
                 <li class="link-box flex">
-                    <a href="#about">
+                    <a class="link" href="#about">
                         <span class="english">About me</span>
                         <span class="polish">O mnie</span>
                     </a>
                 </li>
                 <li class="link-box flex">
-                    <a href="#contact">
+                    <a class="link" href="#contact">
                         <span class="english">Contact</span>
                         <span class="polish">Kontakt</span>
                     </a>
                 </li>
+                <li class="link-box flex">
+                    <div class="flag-container flex"><img class="flag" id="english" src="images/ENG1.svg" alt="british flag"/></div>
+                    <div class="flag-container flex"><img class="flag" id="polish" src="images/PL1.svg" alt="polish flag"/></div>
+                </li>
             </ul>
         </nav>
-    </header>
-    <section class="section main flex">
-        <h1 class="main-header">Hi I'm Kuba, a <br> front-end web dev</h1>
-        <a href="#projects" class="main-button">take a look @ my work</a>
-    </section>
+    </div>  
     <section class="section projects" id="projects">
-        <h2 class="section-header flex"><span class="english">My projects</span><span class="polish">Moje projekty</span></h2>
+        <h2 class="section-header flex"><span class="english">Projects</span><span class="polish">Realizacje</span></h2>
+        <h3>Kliknij na wybrany projekt, by uzyskać więcej informacji</h3>
         <div class="projects-grid">
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex"><img src="./images/page11.png" alt="funny gif"></a></div>
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex"><img src="./images/page11.png" alt="funny gif"></a></div>
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex"><img src="./images/page11.png" alt="funny gif"></a></div>
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex"><img src="./images/page11.png" alt="funny gif"></a></div>
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex"><img src="./images/page11.png" alt="funny gif"></a></div>
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex"><img src="./images/page11.png" alt="funny gif"></a></div>        
+            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="portfolio"></a></div>
+            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="businessPage"></a></div>
+            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="clocks"></a></div>
+            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="medicineBox"></a></div>
+            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="memoryGame"></a></div>
+            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="dorian"></a></div>        
         </div>
         <div class="modal flex">
-            <div class="flex modal-row">
-                <h3 class="modal-title">Project title</h3>
-                <div class="modal-exit"><i class="far fa-times-circle"></i></div></div>
-            <div class="flex modal-row">
-                <img src="images/page11.png" alt="image of the project"/>
-                <div class="modal-row-column flex">
-                    <p class="modal-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, esse. Repellendus suscipit odio id aspernatur consectetur, qui eveniet harum porro.</p>
-                    <p>Used technologies:<span class="modal-technologies"></span></p>
-                    <p>Challenges and features:</p>
-                    <ul>
-                        <li><span class="modal-challenge">Simple landing site</span></li>
-                        <li><span class="modal-challenge">Flexbox and grid based</span></li>
-                        <li><span class="modal-challenge">News sorting system - max 3 news visible at the same time</span></li>
-                        <li><span class="modal-challenge">Simple php contact form</span></li>
-                        <li><span class="modal-challenge">Deployment</span></li>
-                    </ul>
+                <h3 class="modal-title"></h3>
+                <p class="modal-textEN english"></p>
+                <p class="modal-textPL polish"></p>
+                <ul>
+                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
+                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
+                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
+                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
+                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
+                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
+                </ul>
+                <div class="modal-buttons flex">
+                    <a href="http://www.dorianwilczynski.pl" target="_blank" class="modal-button live flex">Live</a>
+                    <a href="https://github.com/jjcreator/AuthorLandingPage" target="_blank" class="modal-button code flex">Code</a>
                 </div>
-            </div>
-            
-            <a href="http://www.dorianwilczynski.pl" target="_blank" class="modal-button live">Live</a>
-            <a href="https://github.com/jjcreator/AuthorLandingPage" target="_blank" class="modal-button code">Code</a>
+                <div class="modal-exit"><i class="far fa-times-circle"></i></div>
         </div>
     </section>
     <section class="section about" id="about">
@@ -149,13 +149,6 @@
             </form>
         </div> 
     </section>
-    <div class="nav right-bar"></div>
-    <div class="nav left-bar"></div>
-    <footer class="nav flex bottom-bar">
-        <span>jjcreator8@gmail.com</span>
-        <div class="flag-container flex"><img class="flag" id="english" src="images/ENG1.svg" alt="british flag"/></div>
-        <div class="flag-container flex"><img class="flag" id="polish" src="images/PL1.svg" alt="polish flag"/></div>
-    </footer>
     <script src="https://kit.fontawesome.com/906f0b3815.js" crossorigin="anonymous"></script>
     <script src="./app.js"></script>
 </body>
