@@ -1,4 +1,42 @@
-// Language change 
+const video = document.querySelector(".video");
+video.playbackRate = 1;
+
+const steering = Array.from(document.querySelectorAll(".steer"));
+
+steering.forEach(item => item.addEventListener("mouseover", ()=> {
+    switch(steering.indexOf(item)) {
+        case 0: video.style.left = "-5%";
+                video.style.top = "-5%"
+                break;
+        case 1: video.style.top = "-5%";
+                video.style.left = "-10%";
+                break;
+        case 2: video.style.top = "-5%";
+                video.style.left="-15%"
+                break;
+        case 3: video.style.left = "-5%";
+                video.style.top = "-10%"
+                break;
+        case 4: video.style.top = "-10%";
+                video.style.left= "-10%";
+                break;
+        case 5: video.style.left = "-15%";
+                video.style.top = "-10%"
+                break;
+        case 6: video.style.top = "-15%";
+                video.style.left = "-5%"
+                break;
+        case 7: video.style.top = "-15%";
+                video.style.left = "-10%"
+                break;
+        case 8: video.style.top = "-15%";
+                video.style.left = "-15%"
+                break; 
+        default: break;
+    }
+}))
+
+// Language changed
 
 const flagsArray = document.querySelectorAll(".flag");
 const english = document.querySelectorAll(".english");
@@ -141,8 +179,8 @@ const modals = {
 
 let navbar = document.querySelector(".nav");
 const activateNavbar = () => {
-    window.scrollY > window.innerHeight ? navbar.style.background = "var(--primary-color)" : 
-    window.scrollY <= window.innerHeight * 1 ? navbar.style.background = "transparent": null;
+    window.scrollY >= window.innerHeight*0.89 ? navbar.style.background = "var(--primary-color)" : 
+    window.scrollY < window.innerHeight ? navbar.style.background = "transparent": null;
 }
 
 const navLinks = document.querySelectorAll(".link")

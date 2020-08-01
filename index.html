@@ -8,11 +8,26 @@
 </head>
 <body>
     <div class="modal-background"></div>
-        <section class="section main flex">
+    <section class="section main flex">
+        <div class="vid-steering-grid">
+            <div class="steer"></div>
+            <div class="steer"></div>
+            <div class="steer"></div>
+            <div class="steer"></div>
+            <div class="steer"></div>
+            <div class="steer"></div>
+            <div class="steer"></div>
+            <div class="steer"></div>
+            <div class="steer"></div>
+        </div>
+        <video class="video" loop muted autoplay>
+            <source src="video/Neon - 21368.mp4">
+        </video>
         <h1 class="main-header">jjcreator <br> <span>front-end web developer</span></h1>
         <a href="#projects" class="main-button link">portfolio</a>
     </section>
     <div class="nav-container">
+        <div class="nav-cover"></div>
         <nav class="nav flex sticky-header">
             <a href="#" class="link logo">jjcreator.dev</a>
             <ul class="nav-links flex">
@@ -42,8 +57,9 @@
         </nav>
     </div>  
     <section class="section projects" id="projects">
-        <h2 class="section-header flex"><span class="english">Projects</span><span class="polish">Realizacje</span></h2>
-        <h3>Kliknij na wybrany projekt, by uzyskać więcej informacji</h3>
+        <h2 class="section-header flex"><span class="english">Portfolio</span><span class="polish">Projekty</span></h2>
+        <h3 class="polish">Moje wybrane projekty. Kliknij na obrazek, by uzyskać więcej informacji</h3>
+        <h3 class="english">Here are some of my projects. Click an image for more information</h3>
         <div class="projects-grid">
             <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="portfolio"></a></div>
             <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="businessPage"></a></div>
@@ -73,7 +89,7 @@
     </section>
     <section class="section about" id="about">
         <div class="main-container flex">
-            <h2 class="section-header flex">About me</h2>
+            <h2 class="section-header flex"><span class="english">About me</span><span class="polish">O mnie</span></h2>
             <div class="about-row flex">
                 <img class="about-img" src="./images/man.jpg" alt="man gazing at the night sky"/>
                 <div class="about-description flex">
