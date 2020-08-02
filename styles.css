@@ -61,6 +61,7 @@ body {
 
 .nav {
     background: transparent;
+    background-color: var(--primary-color);
     width: 100%;
     justify-content: flex-end;
     height: 10vh;
@@ -159,47 +160,71 @@ body {
     flex-direction: column;
     height: 100vh;
     position: relative;
+    width: 100%;
+}
+
+.screen {
+    width: 100%;
+    height: 90%;
 }
 
 .vid-steering-grid {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
+    top: 4.2%;
+    left: 3.5%;
+    width: 93%;
+    height: 65%;
     display: grid;
     grid-template: 1fr 1fr 1fr /1fr 1fr 1fr;
-    z-index: 1;
+    z-index: 10;
 }
 
 .steer {
     width: 100%;
     height: 100%;
-    
 }
 
 .vid-wrapper {
-    position: absolute;
-    left: -10%;
-    top: -10%;
-    width: 120%;
-    min-width: 120%;
-    height: 120%;
-    transition: all 600ms ease-in;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    width: 60%;
+    max-width: 1200px;
+    position: relative;
 }
 
-.video {
+/* .flash:before {
+    content: "";
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: darkblue;
+    mix-blend-mode: saturation;
+} */
+
+.video {
+    position: absolute;
+    top: 4.2%;
+    left: 2%;
+    width: 98%;
+    /* animation: goin 1500ms forwards ease-in; */
+    z-index: -1;
+    transition: all 300ms ease-in;
+    
 }
 
-@media (min-aspect-ratio: 16/9) {
+@keyframes goin {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+
+    100% {
+        width: 20%;
+        height: 20%;
+    }
+}
+
+/* @media (min-aspect-ratio: 16/9) {
     .video {
         width: 100%;
         height: auto;
@@ -211,7 +236,7 @@ body {
         width: auto;
         height: 120%;
     }
-}
+} */
 
 @media (max-width: 767px) {
     .video {
@@ -238,6 +263,8 @@ body {
     width: 60%;
     text-align: center;
     line-height: 50px;
+    position: absolute;
+    z-index: 330;
 }
 
 .main-header span {
@@ -260,6 +287,7 @@ body {
     z-index: 1;
     overflow: hidden;
     transition: color 400ms ease-in;
+    position: absolute;
 }
 
 .main-button:before {
@@ -294,7 +322,6 @@ body {
 
 .main-button:hover {
     color: var(--attention-color);
-    /* border: 2px solid white; */
 }
 
 .main-button:hover::before {
@@ -373,7 +400,7 @@ body {
 }
 
 .projects-grid-item[data-item="portfolio"] {
-    background-image: url(/images/balance.jpg);
+    background-image: url(/images/neon2.png);
 }
 
 .projects-grid-item[data-item="businessPage"] {
