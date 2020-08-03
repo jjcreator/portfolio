@@ -1,6 +1,6 @@
 const video = document.querySelector(".vid-wrapper");
 const vid = document.querySelector(".video")
-vid.playbackRate = 1;
+vid.playbackRate = 2;
 
 const steering = Array.from(document.querySelectorAll(".steer"));
 const resetVideoPosition = () => {
@@ -8,51 +8,51 @@ const resetVideoPosition = () => {
     // video.style.top = "-10%";
 }
 
-// vid.addEventListener("ended", ()=> {
-//     vid.play();
-//     video.classList.add("flash");
-//     setTimeout(()=>{
-//         video.classList.remove("flash")
-//     }, 1100)
-// })
+let double = false;
+
+vid.addEventListener("ended", ()=> {
+    vid.play();
+    !double ? vid.style.filter = `hue-rotate(${Math.floor(Math.random() * 361)}deg)`: null;
+    double = !double;
+})
 
 steering.forEach(item => item.addEventListener("mouseover", ()=> {
     switch(steering.indexOf(item)) {
-        // case 0: video.style.left = "-5%";
-        //         video.style.top = "-5%";
-        //         setTimeout(resetVideoPosition, 1000);
-        //         break;
-        // case 1: video.style.top = "-5%";
-        //         video.style.left = "-10%";
-        //         setTimeout(resetVideoPosition, 1000)
-        //         break;
-        // case 2: video.style.top = "-5%";
-        //         video.style.left="-15%"
-        //         setTimeout(resetVideoPosition, 1000)
-        //         break;
-        // case 3: video.style.left = "-5%";
-        //         video.style.top = "-10%"
-        //         setTimeout(resetVideoPosition, 1000)
-        //         break;
-        case 4: vid.style.top = "4.2%";
-                vid.style.left= "0%";
+        case 0: vid.style.left = "0.65%";
+                vid.style.top = "2.8%";
+                setTimeout(resetVideoPosition, 1000);
                 break;
-        // case 5: video.style.left = "-15%";
-        //         video.style.top = "-10%"
-        //         setTimeout(resetVideoPosition, 1000)
-        //         break;
-        // case 6: video.style.top = "-15%";
-        //         video.style.left = "-5%"
-        //         setTimeout(resetVideoPosition, 1000)
-        //         break;
-        // case 7: video.style.top = "-15%";
-        //         video.style.left = "-10%"
-        //         setTimeout(resetVideoPosition, 1000)
-        //         break;
-        // case 8: video.style.top = "-15%";
-        //         video.style.left = "-15%"
-        //         setTimeout(resetVideoPosition, 1000)
-        //         break; 
+        case 1: vid.style.top = "2.8%";
+                vid.style.left = "2%";
+                setTimeout(resetVideoPosition, 1000)
+                break;
+        case 2: vid.style.top = "2.8%";
+                vid.style.left="3.35%"
+                setTimeout(resetVideoPosition, 1000)
+                break;
+        case 3: vid.style.left = "0.65%";
+                vid.style.top = "3.7%"
+                setTimeout(resetVideoPosition, 1000)
+                break;
+        case 4: vid.style.top = "3.7%";
+                vid.style.left= "2%";
+                break;
+        case 5: vid.style.left = "3.35%";
+                vid.style.top = "3.7%"
+                setTimeout(resetVideoPosition, 1000)
+                break;
+        case 6: vid.style.top = "3.6%";
+                vid.style.left = "0.65%"
+                setTimeout(resetVideoPosition, 1000)
+                break;
+        case 7: vid.style.top = "3.6%";
+                vid.style.left = "2%"
+                setTimeout(resetVideoPosition, 1000)
+                break;
+        case 8: vid.style.top = "3.6%";
+                vid.style.left = "3.35%"
+                setTimeout(resetVideoPosition, 1000)
+                break; 
         default: break;
     }
 }))
@@ -198,13 +198,31 @@ const modals = {
 
 // Nav sticky
 
-let navbar = document.querySelector(".nav");
-const activateNavbar = () => {
-    window.scrollY >= window.innerHeight*0.89 ? navbar.style.background = "var(--primary-color)" : 
-    window.scrollY < window.innerHeight ? navbar.style.background = "transparent": null;
-}
+// let navbar = document.querySelector(".nav");
+// const activateNavbar = () => {
+//     window.scrollY >= window.innerHeight*0.9 ? navbar.style.background = "var(--secondary-color)" : 
+//     window.scrollY < window.innerHeight ? navbar.style.background = "transparent": null;
+// }
 
-const navLinks = document.querySelectorAll(".link")
+// const navLinks = document.querySelectorAll(".link")
 
-addEventListener("scroll", activateNavbar);
-navLinks.forEach(link => link.addEventListener("click", activateNavbar));
+// addEventListener("scroll", activateNavbar);
+// navLinks.forEach(link => link.addEventListener("click", activateNavbar));
+
+const phone = document.querySelector(".phone");
+const contactSection = document.querySelector("#contact");
+
+phone.addEventListener("click", ()=> {
+    contactSection.scrollIntoView()
+})
+
+
+// Off
+
+const offButton = document.querySelector(".off-button");
+let toggle = false;
+
+offButton.addEventListener("click", ()=> {
+    toggle = !toggle;
+    toggle? vid.style.display ="none": vid.style.display = "block";
+})

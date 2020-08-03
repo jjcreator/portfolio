@@ -24,7 +24,7 @@ body {
     font-family: "Fjord One", serif;
     position: relative;
     background: rgb(53,62,88);
-    background: linear-gradient(135deg, rgba(53,62,88,1) 0%, rgba(33,39,56,1) 50%, rgba(17,20,28,1) 100%);  
+    background: linear-gradient(135deg, rgba(53,62,88,1) 0%, rgba(33,39,56,1) 50%, rgba(17,20,28,1) 100%);
     height: 100%;
     overflow-x: hidden;
 }
@@ -47,9 +47,9 @@ body {
 
 .nav-container {
     position: absolute;
-    top: 90vh;
+    top: 100vh;
     width: 100%;
-    height: calc(100% - 90vh);
+    height: calc(100% - 100vh);
 }
 
 .sticky-header {
@@ -60,13 +60,13 @@ body {
 }
 
 .nav {
-    background: transparent;
-    background-color: var(--primary-color);
     width: 100%;
     justify-content: flex-end;
-    height: 10vh;
-    z-index: 2;
-    transition: background 100ms ease-in;
+    height: 9vh;
+    z-index: 200;
+    background-color: var(--secondary-color);
+    /* transition: background 100ms ease-in; */
+    box-shadow: 0px 2px 15px black;
 }
 
 .nav-links {
@@ -80,15 +80,17 @@ body {
     width: 25%;
 }
 
-.nav .link:hover {
+.nav .link, .logo {
     text-shadow: 0px 0px 5px black;
 }
 
 
 .link span {
-    font-family: "Fjord One", serif;
+    font-family: "Script MT", serif;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
+    padding: 20px;
+    text-transform: lowercase;
 }
 
 .logo {
@@ -98,7 +100,7 @@ body {
     font-family: "Script MT";
     background: none;
     border: none;
-    color: var(--text-color);
+    color: white;
 }
 
 .flag-container {
@@ -161,11 +163,194 @@ body {
     height: 100vh;
     position: relative;
     width: 100%;
+    background-image: url(images/wall.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
 }
 
 .screen {
     width: 100%;
     height: 90%;
+    z-index: 10;
+}
+
+
+.counter {
+    position: absolute;
+    bottom: -88%;
+    width: 200%;
+    left: -50%;
+    z-index: -1;
+}
+
+.phone-img {
+    width: 16%;
+    position: absolute;
+    bottom: -2%;
+    left: -10%;
+    z-index: 10;
+}
+
+
+.phone-img img {
+    width: 100%;
+    transform: rotate(30deg);
+    transition: all 500ms ease;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 5px black)
+}
+
+.phone-img:hover::before {
+    display: block;
+}
+
+.phone-img:hover img {
+    filter: drop-shadow(5px 5px 10px black) drop-shadow(-5px -5px 10px black) saturate(3);
+    transform: rotate(20deg) translateY(-10%);
+}
+
+.phone-img::before {
+    content: "contact me";
+    position: absolute;
+    top: -70%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 101;
+    color: white;
+    font-size: 20px;
+    font-family: "Fjord One";
+    background-color: #212738;
+    text-transform: uppercase;
+    display: none;
+    padding: 20px
+}
+
+.hand-img {
+    width: 17%;
+    position: absolute;
+    bottom: 2%;
+    right: -8%;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 500ms ease;
+    filter: drop-shadow(2px 2px 2px black);
+    transform: rotate(10deg);
+}
+
+.hand::before {
+    content: "SKILLS";
+    position: absolute;
+    bottom: 20%;
+    right: -8%;
+    width: 17%;
+    text-align: center;
+    z-index: 101;
+    color: white;
+    font-size: 20px;
+    font-family: "Fjord One";
+    background-color: #212738;
+    display: none;
+    padding: 20px;
+    font-weight: lighter;
+}
+
+.hand:hover::before {
+    display: block;
+}
+
+.hand {
+    
+}
+
+.hand-img:hover {
+    /* filter: drop-shadow(5px 5px 10px black) drop-shadow(-5px -5px 10px black); */
+    animation: mouse 1200ms ease-in infinite;
+}
+
+@keyframes mouse {
+    0% {
+        transform: rotate(10deg) translate(0%, 0);
+    }
+    25% {
+        transform: rotate(10deg) translate(10%, 0);
+    }
+    50% {
+        transform: rotate(10deg) translate(10%, 10%);
+    }
+    75% {
+        transform: rotate(10deg) translate(0%, 10%)
+    }
+    100% {
+        transform: rotate(10deg) translate(0%, 0%);
+    }
+}
+
+.keyboard {
+    position: absolute;
+    /* -webkit-perspective: 825px;
+    perspective: 825px; */
+    bottom: -2%;
+    left: 21%;
+    width: 58%;
+}
+
+.keyboard-img {
+    width: 100%;
+    z-index: 10;
+    /* -webkit-transform: rotateX(32deg) rotateY(1deg);
+    transform: rotateX(32deg) rotateY(1deg); */
+    cursor: pointer; 
+}
+
+.keyboard::before {
+    content: "ABOUT ME";
+    position: absolute;
+    top: 30%;
+    right: 50%;
+    font-size: 20px;
+    width: 25%;
+    transform: translateX(50%);
+    z-index: 101;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    display: none;
+}
+
+.keyboard:hover::before {
+    display: block;
+}
+
+.keyboard-img:hover {
+    filter: drop-shadow(5px 5px 10px black) drop-shadow(-5px -5px 10px black);
+}
+
+.off-button {
+    height: 2%;
+    color: black;
+    position: absolute;
+    top: 77%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 2em;
+    border: 1px dotted black;
+}
+
+.off-button:active i {
+    color: var(--attention-color);
+}
+
+.off-button i {
+    color: black;
+    font-size: 20px;
 }
 
 .vid-steering-grid {
@@ -185,31 +370,29 @@ body {
 }
 
 .vid-wrapper {
-    width: 60%;
+    width: 70%;
     max-width: 1200px;
     position: relative;
 }
 
-/* .flash:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: darkblue;
-    mix-blend-mode: saturation;
-} */
-
 .video {
     position: absolute;
-    top: 4.2%;
+    top: 3.4%;
     left: 2%;
-    width: 98%;
+    width: 96%;
     /* animation: goin 1500ms forwards ease-in; */
     z-index: -1;
-    transition: all 300ms ease-in;
-    
+    transition: left 500ms ease-in, top 500ms ease-in, filter 1000ms ease-in;
+}
+
+.video-black {
+    position: absolute;
+    top: 3.4%;
+    left: 2%;
+    width: 96%;
+    height:66%;
+    background-color: black;
+    z-index: -2;
 }
 
 @keyframes goin {
@@ -253,38 +436,39 @@ body {
     }
 }
 
-
 .main-header {
     color: var(--secondary-color);
     font-family: "Script MT", serif;
-    font-size: 80px;
+    font-size: 100px;
     font-weight: 500;
-    position: relative;
-    width: 60%;
+    width: 100%;
     text-align: center;
     line-height: 50px;
     position: absolute;
-    z-index: 330;
+    top: 25%;
+
 }
 
 .main-header span {
-    font-size: 25px;
-    color: var(--attention-color)
+    font-size: 30px;
+    color: var(--primary-color);
 }
 
 .main-button {
     background-color: #2127387e;
     color: white;
-    width: 20%;
+    width: 25%;
     font-size: 25px;
     padding: 20px 0;
     font-family: "Fjord One", serif;
-    margin-top: 25vh;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: 50;
     overflow: hidden;
     transition: color 400ms ease-in;
     position: absolute;
