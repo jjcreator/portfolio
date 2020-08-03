@@ -163,7 +163,7 @@ body {
     height: 100vh;
     position: relative;
     width: 100%;
-    background-image: url(images/wall.jpg);
+    background: url(/images/gradient.png);
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -341,7 +341,7 @@ body {
     cursor: pointer;
     background-color: transparent;
     border-radius: 2em;
-    border: 1px dotted black;
+    border: 1px solid black;
 }
 
 .off-button:active i {
@@ -370,7 +370,7 @@ body {
 }
 
 .vid-wrapper {
-    width: 70%;
+    width: 60%;
     max-width: 1200px;
     position: relative;
 }
@@ -458,7 +458,7 @@ body {
     background-color: #2127387e;
     color: white;
     width: 25%;
-    font-size: 25px;
+    font-size: 22px;
     padding: 20px 0;
     font-family: "Fjord One", serif;
     top: 50%;
