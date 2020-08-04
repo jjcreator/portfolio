@@ -163,10 +163,22 @@ body {
     height: 100vh;
     position: relative;
     width: 100%;
-    background: url(/images/gradient.png);
+    z-index: 1;
+    background: url(/images/wall.jpg);
     background-size: cover;
     background-position: center;
-    z-index: 1;
+}
+
+.main:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: #000000c5; */
+    z-index: -1;
+
 }
 
 .screen {
