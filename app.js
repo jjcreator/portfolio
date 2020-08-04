@@ -196,18 +196,10 @@ const modals = {
     }
 }
 
-// Nav sticky
+const navLinks = document.querySelectorAll(".link")
 
-// let navbar = document.querySelector(".nav");
-// const activateNavbar = () => {
-//     window.scrollY >= window.innerHeight*0.9 ? navbar.style.background = "var(--secondary-color)" : 
-//     window.scrollY < window.innerHeight ? navbar.style.background = "transparent": null;
-// }
-
-// const navLinks = document.querySelectorAll(".link")
-
-// addEventListener("scroll", activateNavbar);
-// navLinks.forEach(link => link.addEventListener("click", activateNavbar));
+addEventListener("scroll", activateNavbar);
+navLinks.forEach(link => link.addEventListener("click", activateNavbar));
 
 const phone = document.querySelector(".phone");
 const contactSection = document.querySelector("#contact");

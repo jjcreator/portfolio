@@ -25,6 +25,7 @@ body {
     position: relative;
     background: rgb(53,62,88);
     background: linear-gradient(135deg, rgba(53,62,88,1) 0%, rgba(33,39,56,1) 50%, rgba(17,20,28,1) 100%);
+    background: #fff;
     height: 100%;
     overflow-x: hidden;
 }
@@ -45,28 +46,16 @@ body {
 
 /* ---------------- Navigation ---------------- */
 
-.nav-container {
-    position: absolute;
-    top: 100vh;
-    width: 100%;
-    height: calc(100% - 100vh);
-}
-
-.sticky-header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 200;
-}
-
 .nav {
     width: 100%;
     justify-content: flex-end;
     height: 9vh;
     z-index: 200;
-    background-color: var(--secondary-color);
-    /* transition: background 100ms ease-in; */
-    box-shadow: 0px 2px 15px black;
+    background-color: #000;
+    color: #fff;
+    transition: background 100ms ease-in;
+    position: fixed;
+    top: 0;
 }
 
 .nav-links {
@@ -78,19 +67,16 @@ body {
 .link-box {
     height: 100%;
     width: 25%;
-}
-
-.nav .link, .logo {
-    text-shadow: 0px 0px 5px black;
+    color: inherit;
 }
 
 
 .link span {
     font-family: "Script MT", serif;
-    color: white;
-    font-size: 30px;
+    font-size: 25px;
     padding: 20px;
     text-transform: lowercase;
+    color: inherit;
 }
 
 .logo {
@@ -100,7 +86,7 @@ body {
     font-family: "Script MT";
     background: none;
     border: none;
-    color: white;
+    color: inherit;
 }
 
 .flag-container {
@@ -164,179 +150,26 @@ body {
     position: relative;
     width: 100%;
     z-index: 1;
-    background: url(/images/wall.jpg);
-    background-size: cover;
-    background-position: center;
+    background-color: #fff;
+    padding: 0;
 }
 
-.main:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    /* background-color: #000000c5; */
-    z-index: -1;
-
+.showcase {
+    width: 100%;
+    margin-top: 1vh;
+    height: 99vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    z-index: 1;
 }
 
 .screen {
-    width: 100%;
-    height: 90%;
-    z-index: 10;
-}
-
-
-.counter {
-    position: absolute;
-    bottom: -88%;
-    width: 200%;
-    left: -50%;
-    z-index: -1;
-}
-
-.phone-img {
-    width: 16%;
-    position: absolute;
-    bottom: -2%;
-    left: -10%;
-    z-index: 10;
-}
-
-
-.phone-img img {
-    width: 100%;
-    transform: rotate(30deg);
-    transition: all 500ms ease;
-    cursor: pointer;
-    filter: drop-shadow(2px 2px 5px black)
-}
-
-.phone-img:hover::before {
-    display: block;
-}
-
-.phone-img:hover img {
-    filter: drop-shadow(5px 5px 10px black) drop-shadow(-5px -5px 10px black) saturate(3);
-    transform: rotate(20deg) translateY(-10%);
-}
-
-.phone-img::before {
-    content: "contact me";
-    position: absolute;
-    top: -70%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 101;
-    color: white;
-    font-size: 20px;
-    font-family: "Fjord One";
-    background-color: #212738;
-    text-transform: uppercase;
-    display: none;
-    padding: 20px
-}
-
-.hand-img {
-    width: 17%;
-    position: absolute;
-    bottom: 2%;
-    right: -8%;
-    z-index: 10;
-    cursor: pointer;
-    transition: all 500ms ease;
-    filter: drop-shadow(2px 2px 2px black);
-    transform: rotate(10deg);
-}
-
-.hand::before {
-    content: "SKILLS";
-    position: absolute;
-    bottom: 20%;
-    right: -8%;
-    width: 17%;
-    text-align: center;
-    z-index: 101;
-    color: white;
-    font-size: 20px;
-    font-family: "Fjord One";
-    background-color: #212738;
-    display: none;
-    padding: 20px;
-    font-weight: lighter;
-}
-
-.hand:hover::before {
-    display: block;
-}
-
-.hand {
-    
-}
-
-.hand-img:hover {
-    /* filter: drop-shadow(5px 5px 10px black) drop-shadow(-5px -5px 10px black); */
-    animation: mouse 1200ms ease-in infinite;
-}
-
-@keyframes mouse {
-    0% {
-        transform: rotate(10deg) translate(0%, 0);
-    }
-    25% {
-        transform: rotate(10deg) translate(10%, 0);
-    }
-    50% {
-        transform: rotate(10deg) translate(10%, 10%);
-    }
-    75% {
-        transform: rotate(10deg) translate(0%, 10%)
-    }
-    100% {
-        transform: rotate(10deg) translate(0%, 0%);
-    }
-}
-
-.keyboard {
-    position: absolute;
-    /* -webkit-perspective: 825px;
-    perspective: 825px; */
-    bottom: -2%;
-    left: 21%;
-    width: 58%;
-}
-
-.keyboard-img {
-    width: 100%;
-    z-index: 10;
-    /* -webkit-transform: rotateX(32deg) rotateY(1deg);
-    transform: rotateX(32deg) rotateY(1deg); */
-    cursor: pointer; 
-}
-
-.keyboard::before {
-    content: "ABOUT ME";
-    position: absolute;
-    top: 30%;
-    right: 50%;
-    font-size: 20px;
-    width: 25%;
-    transform: translateX(50%);
-    z-index: 101;
-    padding: 20px;
-    text-align: center;
-    background-color: var(--secondary-color);
-    display: none;
-}
-
-.keyboard:hover::before {
-    display: block;
-}
-
-.keyboard-img:hover {
-    filter: drop-shadow(5px 5px 10px black) drop-shadow(-5px -5px 10px black);
+    width: 80%;
+    height: auto;
+    z-index: 3;
 }
 
 .off-button {
@@ -374,6 +207,7 @@ body {
     display: grid;
     grid-template: 1fr 1fr 1fr /1fr 1fr 1fr;
     z-index: 10;
+    display: none;
 }
 
 .steer {
@@ -381,19 +215,13 @@ body {
     height: 100%;
 }
 
-.vid-wrapper {
-    width: 60%;
-    max-width: 1200px;
-    position: relative;
-}
-
 .video {
     position: absolute;
-    top: 3.4%;
-    left: 2%;
-    width: 96%;
+    top: 23%;
+    left: 34%;
+    width: 32%;
     /* animation: goin 1500ms forwards ease-in; */
-    z-index: -1;
+    z-index:2;
     transition: left 500ms ease-in, top 500ms ease-in, filter 1000ms ease-in;
 }
 
@@ -469,11 +297,11 @@ body {
 .main-button {
     background-color: #2127387e;
     color: white;
-    width: 25%;
+    width: 15%;
     font-size: 22px;
     padding: 20px 0;
     font-family: "Fjord One", serif;
-    top: 50%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
