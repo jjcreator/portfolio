@@ -198,23 +198,22 @@ const modals = {
 
 const navLinks = document.querySelectorAll(".link")
 
-addEventListener("scroll", activateNavbar);
-navLinks.forEach(link => link.addEventListener("click", activateNavbar));
-
-const phone = document.querySelector(".phone");
-const contactSection = document.querySelector("#contact");
-
-phone.addEventListener("click", ()=> {
-    contactSection.scrollIntoView()
-})
-
 
 // Off
+
+const mainHeader = document.querySelector(".main-header");
 
 const offButton = document.querySelector(".off-button");
 let toggle = false;
 
 offButton.addEventListener("click", ()=> {
     toggle = !toggle;
-    toggle? vid.style.display ="none": vid.style.display = "block";
+    if(toggle) {
+        vid.style.display = "none";
+        mainHeader.style.color = "#fff"
+    }
+    else {
+        vid.style.display = "block";
+        mainHeader.style.color = "#000"
+    }
 })
