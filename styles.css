@@ -49,10 +49,11 @@ body {
     justify-content: flex-end;
     height: 9vh;
     z-index: 200;
-    background-color: black;
+    background-color: var(--text-color);
     transition: background 100ms ease-in;
     position: fixed;
     top: 0;
+    box-shadow: 0px 0px 15px black;
 }
 
 .nav-links {
@@ -184,21 +185,11 @@ body {
 }
 
 .showcase {
-    width: 90%;
+    width: 100%;
     position: relative;
     background-color: #fff;
     z-index: 1;
-}
-
-.main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.19) 0%, rgba(196, 196, 196, 0/5) 11.46%, rgba(196, 196, 196, 0) 82.81%, rgba(196, 196, 196, 0.254906) 99.97%, rgba(196, 196, 196, 0.54862) 99.98%, rgba(0, 0, 0, 0.19) 99.99%);;
-    z-index: 5;
+    max-width: 1500px;
 }
 
 .screen {
@@ -223,7 +214,7 @@ body {
     background-color: transparent;
     border-radius: 50%;
     border: 1px solid black;
-    z-index: 51
+    z-index: 10;
 }
 
 .off-button:active i {
@@ -346,7 +337,7 @@ body {
 
 .main__subheader {
     font-size: 25px;
-    color: var(--attention-color);
+    color: #860505;
     top: 42%;
 }
 
@@ -502,7 +493,7 @@ body {
 
 .projects__description {
     line-height: 1.5;
-    font-size: 18px;
+    font-size: 16px;
     padding: 20px;
     margin-top: 5%;
 }

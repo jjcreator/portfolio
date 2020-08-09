@@ -153,16 +153,6 @@ const projectsData = {
         linkLive: "https://jjcreator.github.io/business_page/",
         linkCode: "https://github.com/jjcreator/business_page"
     },
-    portfolio: {
-        title: "My portfolio",
-        textPL: "Lorem ipsum bla bla bla po polsku",
-        textEN: "Lorem ipsum blah blah blah in english",
-        listPL: ["Simple landing site", "Flexbox based", "News sorting system - max 3 news visible at the same time", "Simple php contact form", "Deployment", "Made with HTML, CSS and JavaScript"],
-        listEN: ["Simple landing site", "Flexbox based", "News sorting system - max 3 news visible at the same time", "Simple php contact form", "Deployment", "Made with HTML, CSS and JavaScript"],
-        img: 'url("images/balance.png")',
-        linkLive: "",
-        linkCode: "https://github.com/jjcreator/Portfolio"
-    }
 }
 
 const navLinks = document.querySelectorAll(".link")
