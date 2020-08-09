@@ -1,57 +1,66 @@
 const video = document.querySelector(".vid-wrapper");
 const vid = document.querySelector(".video")
+const mainHeader = document.querySelector(".main__header");
+const mainSubheader = document.querySelector(".main__subheader");
 vid.playbackRate = 2;
 
 const steering = Array.from(document.querySelectorAll(".steer"));
-const resetVideoPosition = () => {
-    // video.style.left = "-10%";
-    // video.style.top = "-10%";
-}
+const vidSteeringGrid = document.querySelector(".vid-steering-grid");
 
 let double = false;
+let count = 0;
+const headersArray = ["jjcreator", "coding", "design", "creativity"];
+const colors = ["black", "white", "silver", "orange"]
 
 vid.addEventListener("ended", ()=> {
-    vid.play();
-    !double ? vid.style.filter = `hue-rotate(${Math.floor(Math.random() * 361)}deg)`: null;
-    double = !double;
+    if (vid.style.display != "none") {
+        vid.play();
+        if(!double) {
+            count < 3 ? count++ : count = 0;
+            count === 0 ? mainSubheader.innerText = "front end developer" : mainSubheader.innerText = "is my passion";
+            vid.style.filter = `hue-rotate(${Math.floor(Math.random() * 361)}deg)`;
+            mainHeader.innerText = headersArray[count];
+            mainHeader.style.color = colors[count];
+        
+        }
+        double = !double;
+    }
+    else {count = 0}
+})
+
+vidSteeringGrid.addEventListener("mouseout", ()=> {
+    vid.style.top = "23%";
+    vid.style.left = "50%"
 })
 
 steering.forEach(item => item.addEventListener("mouseover", ()=> {
     switch(steering.indexOf(item)) {
-        case 0: vid.style.left = "0.65%";
-                vid.style.top = "2.8%";
-                setTimeout(resetVideoPosition, 1000);
+        case 0: vid.style.left = "48%";
+                vid.style.top = "22.5%";
                 break;
-        case 1: vid.style.top = "2.8%";
-                vid.style.left = "2%";
-                setTimeout(resetVideoPosition, 1000)
+        case 1: vid.style.top = "22.5%";
+                vid.style.left = "50%";
                 break;
-        case 2: vid.style.top = "2.8%";
-                vid.style.left="3.35%"
-                setTimeout(resetVideoPosition, 1000)
+        case 2: vid.style.top = "22.5%";
+                vid.style.left="52%";
                 break;
-        case 3: vid.style.left = "0.65%";
-                vid.style.top = "3.7%"
-                setTimeout(resetVideoPosition, 1000)
+        case 3: vid.style.left = "48%";
+                vid.style.top = "23%";
                 break;
-        case 4: vid.style.top = "3.7%";
-                vid.style.left= "2%";
+        case 4: vid.style.top = "23%";
+                vid.style.left= "50%";
                 break;
-        case 5: vid.style.left = "3.35%";
-                vid.style.top = "3.7%"
-                setTimeout(resetVideoPosition, 1000)
+        case 5: vid.style.left = "52%";
+                vid.style.top = "23%";
                 break;
-        case 6: vid.style.top = "3.6%";
-                vid.style.left = "0.65%"
-                setTimeout(resetVideoPosition, 1000)
+        case 6: vid.style.top = "23.5%";
+                vid.style.left = "48%";
                 break;
-        case 7: vid.style.top = "3.6%";
-                vid.style.left = "2%"
-                setTimeout(resetVideoPosition, 1000)
+        case 7: vid.style.top = "23.5%";
+                vid.style.left = "50%";
                 break;
-        case 8: vid.style.top = "3.6%";
-                vid.style.left = "3.35%"
-                setTimeout(resetVideoPosition, 1000)
+        case 8: vid.style.top = "23.5%";
+                vid.style.left = "52%";
                 break; 
         default: break;
     }
@@ -90,54 +99,14 @@ const submitButton = document.querySelector(".submit")
 
 submitButton.addEventListener("click", e => e.preventDefault())
 
-// Modal
 
-const projectItems = document.querySelectorAll(".projects-grid-item");
-const modal = document.querySelector(".modal");
-const modalBackground = document.querySelector(".modal-background");
-const modalExit = document.querySelector(".modal-exit");
-const modalTitle = document.querySelector(".modal-title");
-const modalTextEN = document.querySelector(".modal-textEN");
-const modalTextPL = document.querySelector(".modal-textPL");
-const modalChallengesListEN = Array.from(document.querySelectorAll(".modal-challengeEN"));
-const modalChallengesListPL = Array.from(document.querySelectorAll(".modal-challengePL"));
-const modalLiveButton = document.querySelector(".live");
-const modalCodeButton = document.querySelector(".code");
+// Projects content
 
-projectItems.forEach(item => item.addEventListener("click", ()=> {
-    let currentItem = item.dataset.item;
-    modal.style.backgroundImage = modals[currentItem].img;
-    modalTitle.textContent = modals[currentItem].title;
-    modalTextEN.textContent = modals[currentItem].textEN;
-    modalTextPL.textContent = modals[currentItem].textPL;
-    modalChallengesListEN.map((challenge, index) => {
-        challenge.textContent = modals[currentItem].listEN[index]
-    });
-    modalChallengesListPL.map((challenge, index) => {
-        challenge.textContent = modals[currentItem].listPL[index]
-    });
-    modalLiveButton.href = modals[currentItem].linkLive;
-    modal.style.display = "flex";
-    modalBackground.style.display = "block";
-}))
-
-modalExit.addEventListener("click", ()=> {
-    modal.style.display = "none";
-    modalBackground.style.display = "none";
-});
-
-modalBackground.addEventListener("click", ()=> {
-    modal.style.display = "none";
-    modalBackground.style.display = "none";
-});
-
-// Modal content
-
-const modals = {
+const projectsData = {
     dorian: {
         title: "Dorian Wilczyński",
-        textPL: "Mój pierwszy projekt - strona typu portfolio dla autora fantasy wykonana dla członka rodziny. Stonowany, prosty wygląd. Nie korzystałem z zewnętrznych bibliotek czy wtyczek. Ze względu na to, że był to mój pierwszy projekt, każdy jego element stanowił pewne wyzwanie, ale i też okazję do nauki i szlifowania umiejętności. Wiele rzeczy robiłem po raz pierwszy - np. użycie PHP czy zakup i konfiguarcja domeny z hostingiem, a także zamieszczenie strony w sieci.",
-        textEN: "My very first serious project - a portfolio site for an fantasy author, made for a family member. Simple, vanilla design. I didn't use any external libraries or plugins. As this was my first project, every part of it was somewhat of a challenge, but at the same time, a great learning opportunity. A lot of the steps involved in creating this project I had never done before - like using PHP, buying and configuring a domain + hosting, or deploying the site to the web",
+        textPL: "Mój pierwszy projekt - strona typu portfolio dla autora fantasy. Stonowany, prosty wygląd. Nie korzystałem z zewnętrznych bibliotek czy wtyczek. Ze względu na to, że był to mój pierwszy projekt, każdy jego element stanowił pewne wyzwanie, ale i też okazję do nauki i szlifowania umiejętności. Wiele rzeczy robiłem po raz pierwszy - np. użycie PHP czy zakup i konfiguarcja domeny z hostingiem, a także zamieszczenie strony w sieci.",
+        textEN: "My very first serious project - a portfolio site for an fantasy author. Simple, vanilla design. I didn't use any external libraries or plugins. As this was my first project, every part of it was somewhat of a challenge, but at the same time, a great learning opportunity. A lot of the steps involved in creating this project I had never done before - like using PHP, buying and configuring a domain + hosting, or deploying the site to the web",
         listPL: ["Prosta strona", "Oparta na flexboxie", "System sortowania newsów - po 3", "Formularz kontaktowy PHP", "Deployment", "HTML, CSS i JavaScript"],
         listEN: ["Simple website", "Flexbox based", "News sorting system", "Simple php contact form", "Deployment", "HTML, CSS and JavaScript"],
         img: 'url("images/dorian.png")',
@@ -148,8 +117,8 @@ const modals = {
         title: "Memory Game",
         textPL: "Gra logiczno-zręcznościowa, jeden z moich pierwszych projektów, przy okazji którego miałem sposbność przećwiczyć znajomość CSS Grida, a także popracować na tablicach i związanych z nimi funkcjach. Pewną trudnością było dostosowanie gry do różnych rozmiarów ekranów. Gra wykonana z pełni darmowych zasóbów znalezionych w sieci.",
         textEN: "A puzzle / arcade game, one of my first projects. Working on it gave me the opportunity to practice using CSS Grid, arrays and array methods. One of the challenges here was making sure the game is responsive on different screen sizes. Game made with free assets found online",
-        listPL: ["Prosta gra pozwalająca ćwiczyć szybkie zapamiętywanie", "Oparta o grid", "3 różne poziomy trudności", "3 zestawy obrazków do zabawy", "Muzyka i dźwięk", "HTML, CSS i JavaScript"],
-        listEN: ["A simple game to train fast memory recall", "Grid based", "3 difficulty settings", "3 tilesets to play with", "Music and sound", "HTML, CSS and JavaScript"],
+        listPL: ["Prosta gra", "Oparta o grid", "3 różne poziomy trudności", "3 zestawy obrazków do zabawy", "Muzyka i dźwięk", "HTML, CSS i JavaScript"],
+        listEN: ["A simple game", "Grid based", "3 difficulty settings", "3 tilesets to play with", "Music and sound", "HTML, CSS and JavaScript"],
         img: 'url("images/memory.png")',
         linkLive: "https://jjcreator.github.io/Memory-Game/",
         linkCode: "https://github.com/jjcreator/Memory-Game"
@@ -201,8 +170,6 @@ const navLinks = document.querySelectorAll(".link")
 
 // Off
 
-const mainHeader = document.querySelector(".main-header");
-
 const offButton = document.querySelector(".off-button");
 let toggle = false;
 
@@ -210,10 +177,36 @@ offButton.addEventListener("click", ()=> {
     toggle = !toggle;
     if(toggle) {
         vid.style.display = "none";
+        vid.pause();
+        mainHeader.innerText = "jjcreator";
+        mainSubheader.innerText = "front end developer"
         mainHeader.style.color = "#fff"
     }
     else {
         vid.style.display = "block";
+        vid.play();
         mainHeader.style.color = "#000"
     }
 })
+
+// Projects carousel 
+
+const projects = document.querySelector(".projects");
+const projectsImg = document.querySelector(".projects__img");
+const projectsTitle = document.querySelector(".projects__title");
+const technologies = document.querySelector(".technologies");
+const liveButton = document.querySelector(".live");
+const codeButton = document.querySelector(".code");
+const scrollButtons = Array.from(document.querySelectorAll(".scroll__item"));
+const backgroundsArray = ["white", "red", "yellow", "crimson", "green"]
+
+scrollButtons.forEach(button => button.addEventListener("click", e=> {
+    let selectedProject = scrollButtons.indexOf(button);
+    projects.style.backgroundColor = backgroundsArray[selectedProject];
+    scrollButtons.forEach(button => {
+        button.style.backgroundColor = "#e5e5e5";
+        button.style.borderColor = "transparent"});
+    selectedProject != 4 ? 
+        e.target.style.backgroundColor = backgroundsArray[selectedProject + 1]: 
+        e.target.style.backgroundColor = "#fff";
+}))

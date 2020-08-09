@@ -34,7 +34,6 @@
             </li>
         </ul>
     </nav>
-    <div class="modal-background"></div>
     <section class="section main flex">
         <div class="showcase">
             <img src="images/whitemonitor6B.png" alt="screen" class="screen"/>
@@ -42,7 +41,8 @@
                 <source src="video/neon.mp4">
             </video>
             <div class="video-black"></div>
-            <h1 class="main-header">jjcreator <br> <span>front-end developer</span></h1>
+            <h1 class="main__header">jjcreator</h1>
+            <h2 class="main__subheader">front-end developer</h2>
             <div class="vid-steering-grid">
                 <div class="steer"></div>
                 <div class="steer"></div>
@@ -59,35 +59,110 @@
         <a href="#projects" class="main-button link">see my work</a>
     </section>
     <section class="section projects" id="projects">
-        <h2 class="section-header flex"><span class="english">Portfolio</span><span class="polish">Projekty</span></h2>
-        <h3 class="polish">Moje wybrane projekty. Kliknij na obrazek, by uzyskać więcej informacji</h3>
-        <h3 class="english">Here are some of my projects. Click an image for more information</h3>
-        <div class="projects-grid">
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="portfolio"></a></div>
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="businessPage"></a></div>
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="clocks"></a></div>
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="medicineBox"></a></div>
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="memoryGame"></a></div>
-            <div class="projects-grid-wrapper"><a href="javascript:void(0)" class="projects-grid-item flex" data-item="dorian"></a></div>        
-        </div>
-        <div class="modal flex">
-                <h3 class="modal-title"></h3>
-                <p class="modal-textEN english"></p>
-                <p class="modal-textPL polish"></p>
-                <ul>
-                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
-                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
-                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
-                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
-                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
-                    <li class="flex"><span class="modal-challengeEN english"></span><span class="modal-challengePL polish"></span></li>
+        <h2 class="section__header flex"><span class="english">work</span><span class="polish">projekty</span></h2>
+        <ul class="projects__scroll flex">
+            <li class="scroll__item flex">1</li>
+            <li class="scroll__item flex">2</li>
+            <li class="scroll__item flex">3</li>
+            <li class="scroll__item flex">4</li>
+            <li class="scroll__item flex">5</li>
+        </ul>
+        <div class="projects__container flex">
+            <div class="container__box--left flex">
+                <img class="projects__img" src="images/fake-test1.png" alt="monitor screen">
+            </div>
+            <div class="container__box--right flex">
+                <h3 class="projects__title">Business site mockup</h3>
+                <p class="projects__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores quod dignissimos, quos saepe accusamus doloribus aperiam ab assumenda sunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatem maiores saepe harum possimus error at accusantium enim assumenda. Veniam!</p>
+                <ul class="technologies flex">
+                    <li class="technologies__item flex">HTML</li>
+                    <li class="technologies__item flex">CSS</li>
+                    <li class="technologies__item flex">JS</li>
+                    <li class="technologies__item flex">React</li>
                 </ul>
-                <div class="modal-buttons flex">
-                    <a href="http://www.dorianwilczynski.pl" target="_blank" class="modal-button live flex">Live</a>
-                    <a href="https://github.com/jjcreator/AuthorLandingPage" target="_blank" class="modal-button code flex">Code</a>
+                <div class="project__buttons flex">
+                    <a href="#" class="projects__button live flex">Live</a>
+                    <a href="#" class="projects__button code flex">Github</a>
                 </div>
-                <div class="modal-exit"><i class="far fa-times-circle"></i></div>
+            </div>
         </div>
+        <div class="projects__container flex">
+            <div class="container__box--left flex">
+                <img class="projects__img" src="images/fake-test1.png" alt="monitor screen">
+            </div>
+            <div class="container__box--right flex">
+                <h3 class="projects__title">Business site mockup</h3>
+                <p class="projects__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores quod dignissimos, quos saepe accusamus doloribus aperiam ab assumenda sunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatem maiores saepe harum possimus error at accusantium enim assumenda. Veniam!</p>
+                <ul class="technologies flex">
+                    <li class="technologies__item flex">HTML</li>
+                    <li class="technologies__item flex">CSS</li>
+                    <li class="technologies__item flex">JS</li>
+                    <li class="technologies__item flex">React</li>
+                </ul>
+                <div class="project__buttons flex">
+                    <a href="#" class="projects__button live flex">Live</a>
+                    <a href="#" class="projects__button code flex">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="projects__container flex">
+            <div class="container__box--left flex">
+                <img class="projects__img" src="images/fake-test1.png" alt="monitor screen">
+            </div>
+            <div class="container__box--right flex">
+                <h3 class="projects__title">Business site mockup</h3>
+                <p class="projects__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores quod dignissimos, quos saepe accusamus doloribus aperiam ab assumenda sunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatem maiores saepe harum possimus error at accusantium enim assumenda. Veniam!</p>
+                <ul class="technologies flex">
+                    <li class="technologies__item flex">HTML</li>
+                    <li class="technologies__item flex">CSS</li>
+                    <li class="technologies__item flex">JS</li>
+                    <li class="technologies__item flex">React</li>
+                </ul>
+                <div class="project__buttons flex">
+                    <a href="#" class="projects__button live flex">Live</a>
+                    <a href="#" class="projects__button code flex">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="projects__container flex">
+            <div class="container__box--left flex">
+                <img class="projects__img" src="images/fake-test1.png" alt="monitor screen">
+            </div>
+            <div class="container__box--right flex">
+                <h3 class="projects__title">Business site mockup</h3>
+                <p class="projects__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores quod dignissimos, quos saepe accusamus doloribus aperiam ab assumenda sunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatem maiores saepe harum possimus error at accusantium enim assumenda. Veniam!</p>
+                <ul class="technologies flex">
+                    <li class="technologies__item flex">HTML</li>
+                    <li class="technologies__item flex">CSS</li>
+                    <li class="technologies__item flex">JS</li>
+                    <li class="technologies__item flex">React</li>
+                </ul>
+                <div class="project__buttons flex">
+                    <a href="#" class="projects__button live flex">Live</a>
+                    <a href="#" class="projects__button code flex">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="projects__container flex">
+            <div class="container__box--left flex">
+                <img class="projects__img" src="images/fake-test1.png" alt="monitor screen">
+            </div>
+            <div class="container__box--right flex">
+                <h3 class="projects__title">Business site mockup</h3>
+                <p class="projects__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores quod dignissimos, quos saepe accusamus doloribus aperiam ab assumenda sunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatem maiores saepe harum possimus error at accusantium enim assumenda. Veniam!</p>
+                <ul class="technologies flex">
+                    <li class="technologies__item flex">HTML</li>
+                    <li class="technologies__item flex">CSS</li>
+                    <li class="technologies__item flex">JS</li>
+                    <li class="technologies__item flex">React</li>
+                </ul>
+                <div class="project__buttons flex">
+                    <a href="#" class="projects__button live flex">Live</a>
+                    <a href="#" class="projects__button code flex">Github</a>
+                </div>
+            </div>
+        </div>
+        
     </section>
     <section class="section about" id="about">
         <div class="main-container flex">
