@@ -2,7 +2,7 @@ const video = document.querySelector(".vid-wrapper");
 const vid = document.querySelector(".video")
 const mainHeader = document.querySelector(".main__header");
 const mainSubheader = document.querySelector(".main__subheader");
-vid.playbackRate = 2;
+vid.playbackRate = 1.8;
 
 const steering = Array.from(document.querySelectorAll(".steer"));
 const vidSteeringGrid = document.querySelector(".vid-steering-grid");
@@ -126,7 +126,7 @@ const projectsData = {
     medicineBox: {
         title: "Medicine Box",
         textPL: "Aplikacja pozwalająca na śledzenie stanu posiadanych leków, ich zastosowania oraz daty ważności. Powstała w odpowiedzi na realną potrzebę, a przy okazji dała mi okazję poćwiczenia różnego rodzaju funkcji związanych z tablicami, a także obiektami daty. Medicine Box automatycznie zaznacza kolorami przeterminowane lekarstwa, jak i te których termin ważności się niedługo kończy.",
-        textEN: "An app to keep track of what medicines you have, their indications for use and date of expiration. Created in response to a real life need, it also gave me the chance to practice working with different array methods, as well as the Date object. Medicine Box automatically labels expired medicines and those which are about to expire with different colors. ",
+        textEN: "An app to keep track of what medicines you have, their indications for use and date of expiration. Created in response to a real life need, it also gave me the chance to practice working with different array methods, as well as the Date object. Medicine Box automatically labels expired medicines and those which are about to expire with different colors.",
         listPL: ["Prosta aplikacja", "Filtrowanie i sortowanie danych", "Automatyczne czynności w oparciu o datę", "Przydatna w prawdziwym życiu", "Dane wpisane ręcznie w HTML", "HTML, CSS i JavaScript"],
         listEN: ["A simple app", "Data filtering and sorting", "Automatic color labelling system based on date", "Real life application", "Data hardcoded into the HTML", "HTML, CSS and JavaScript"],
         img: 'url("images/medicine.png")',
