@@ -12,9 +12,10 @@ let count = 0;
 const headersArray = ["jjcreator", "coding", "design", "creativity"];
 const colors = ["black", "white", "silver", "orange"]
 
-vid.addEventListener("ended", ()=> {
+vid.addEventListener("ended", e=> {
     if (vid.style.display != "none") {
-        vid.play();
+        e.target.currentTime = 0;
+        e.target.play();
         if(!double) {
             count < 3 ? count++ : count = 0;
             count === 0 ? mainSubheader.innerText = "front end developer" : mainSubheader.innerText = "is my passion";
