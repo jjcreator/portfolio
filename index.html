@@ -259,21 +259,21 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- <svg class="about__ending" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1440 0V109H0V0L723.989 54.5L1440 0Z" fill="#860505"/>
-        </svg>             -->
+        </div>            
     </section>
     <section class="section" id="contact">
         <h2 class="section__header"><span class="english">contact me</span><span class="polish">kontakt</span> </h2>
         <h3 class="section__subheader"><span class="english">Have a question or want to work together?</span><span class="polish">Masz pytanie? Chcesz nawiązać współpracę?</span></h3>
-        <form class="contact-form flex" name="contact-form">
-            <div class="name-group flex">
-                <input name="name" class="name" type="text" placeholder="Your name" required pattern="\p{L}+\s\p{L}+"/>
-                <input name="email" class="email" type="text" placeholder="Your e-mail" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+        <form class="contact__form flex" name="contact-form">
+            <div class="form__row">
+                <label class="form__label flex" for="name"><i class="far fa-user label__icon"></i><span class="english label__text">Your Name</span><span class="polish label__text">Imię i nazwisko</span></label>
+                <label class="form__label flex" for="email"><i class="far fa-envelope label__icon"></i><span class=" label__text">Email</span></label>
+                <input id="name" name="name" class="form__input" type="text" required pattern="\p{L}+\s\p{L}+"/>
+                <input id="email" name="email" class="form__input" type="text" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
             </div>
-            <input class="subject" type="text" placeholder="Message subject" required/>
-            <textarea class="message" name="message" placeholder="Type in your message here" required></textarea>
+            
+            <label class="form__label flex" for="message"><i class="far fa-edit label__icon"></i><span class="english label__text">Your message</span><span class="polish label__text">Twoja wiadomość</span></label>
+            <textarea id="message" class="form__input message" name="message" required></textarea>
             <button class="submit" type="submit"><span class="english">Send</span><span class="polish">Wyślij</span></button>
         </form>
     </section>

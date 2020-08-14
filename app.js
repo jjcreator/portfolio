@@ -1,3 +1,5 @@
+// Video controls
+
 const video = document.querySelector(".vid-wrapper");
 const vid = document.querySelector(".video")
 const mainHeader = document.querySelector(".main__header");
@@ -67,11 +69,15 @@ steering.forEach(item => item.addEventListener("mouseover", ()=> {
     }
 }))
 
-// Language changed
+// Language change
 
 const flagsArray = document.querySelectorAll(".flag");
 const english = document.querySelectorAll(".english");
 const polish = document.querySelectorAll(".polish");
+const nameInput = document.querySelector(".name");
+const emailInput = document.querySelector(".email");
+const subjectInput = document.querySelector(".subject");
+const textarea = document.querySelector(".message");
 
 flagsArray.forEach(flag => {
     flag.addEventListener("click", e => {
@@ -81,7 +87,12 @@ flagsArray.forEach(flag => {
             })
             polish.forEach(text => {
                 text.style.display = "none"
-            })
+            });
+            nameInput.placeholder = "Your name";
+            emailInput.placeholder = "Your email";
+            subjectInput.placeholder = "Message subject";
+            textarea.placeholder = "Type in your message here";
+
         }
         else {
             english.forEach(text => {
@@ -90,14 +101,29 @@ flagsArray.forEach(flag => {
             polish.forEach(text => {
                 text.style.display = "block"
             })
+            nameInput.placeholder = "Imię i nazwisko";
+            emailInput.placeholder = "Email";
+            subjectInput.placeholder = "Temat wiadomości";
+            textarea.placeholder = "Tu wpisz swoją wiadomość";
         }
     })
 })
+// Icon animations
+
+const iconImages = document.querySelectorAll(".item__img");
+
+iconImages.forEach(icon => {
+    icon.addEventListener("mouseover", ()=> {
+    icon.classList.add("animatedIcon")})
+    icon.addEventListener("animationend", ()=> {
+    icon.classList.remove("animatedIcon");
+});
+})
+
 
 // Contact form 
 
 const submitButton = document.querySelector(".submit")
-
 submitButton.addEventListener("click", e => e.preventDefault())
 
 

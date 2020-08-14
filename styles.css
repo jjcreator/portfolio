@@ -586,6 +586,20 @@ span {
 
 .item__img {
     width: 50px;
+    transform: rotateZ(0deg)
+}
+
+.animatedIcon {
+    animation: spin 700ms ease-in;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
 
 .figma {
@@ -612,62 +626,77 @@ span {
     width: 100%;
     margin: 0 auto;
     padding: 10vh 0;
+    height: 100vh;
 }
 
-.contact-form {
+.contact__form {
     flex-direction: column;
-    background-color: #e5e5e5;
-    height: 80%;
+    width: 30%;
     padding: 20px;
-    z-index: 200;
-    border-radius: 10px;
 }
 
-.contact-form input, .message {
-    font-size: 18px;
+.form__row {
+    display: grid;
+    margin-bottom: 20px;
+    width: 100%;
+    grid-template: 1fr 1fr/1fr 1fr;
+    grid-gap: 0px 20px;
+}
+
+.form__label {
+    width: 100%;
+    padding: 3px;
+}
+
+.label__text {
+    flex: 1;
+}
+
+.label__icon {
+    padding-right: 5%;
+    font-size: 16px;
+    width: 25px;
+}
+
+.form__input {
+    font-size: 16px;
     padding: 5px;
     color: black;
     font-family: "Poppins", sans-serif;
-}
-
-.name-group {
-    margin-bottom: 20px;
     width: 100%;
-    justify-content: space-between;
+    outline-style: none;
+    border: none;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.25);
+    border-left: 4px solid transparent;
 }
 
-.name {
-    margin-right: 20px;
-}
-
-.subject {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 5px;
+.form__input:focus {
+    border-left: 4px solid var(--attention-color)
 }
 
 .message {
-    font-size: 18px;
     font-family: "Poppins", sans-serif;
     height: 150px;
     width: 100%;
     padding: 5px;
+    resize: none;
 }
 
 .submit {
-    padding: 20px;
-    background-color: var(--primary-color);
-    box-shadow: 0px 0px 5px black;
-    width: 35%;
-    margin: 30px 30px 10px 30px;
-    font-size: 18px;
+    padding: 10px 30px;
+    background-color: var(--attention-color);
+    color: var(--primary-color);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    margin-top: 8%;
+    font-size: 16px;
     cursor: pointer;
     transition: all 200ms ease-in;
-    border: 2px solid transparent;
     border-radius: 10px;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    outline-style: none                 ;
 }
 
-.submit:hover {
-    background-color: var(--attention-color);
-    color: white;
+.submit:focus {
+    text-decoration: underline;                  
 }
