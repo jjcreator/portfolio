@@ -1,13 +1,12 @@
 // Video controls
 
-const video = document.querySelector(".vid-wrapper");
-const vid = document.querySelector(".video")
+const vid = document.querySelector(".showcase__video")
 const mainHeader = document.querySelector(".main__header");
 const mainSubheader = document.querySelector(".main__subheader");
 vid.playbackRate = 1.8;
 
 const steering = Array.from(document.querySelectorAll(".steer"));
-const vidSteeringGrid = document.querySelector(".vid-steering-grid");
+const vidSteeringGrid = document.querySelector(".showcase__steering-grid");
 
 let double = false;
 let count = 0;
@@ -187,7 +186,7 @@ const navLinks = document.querySelectorAll(".link")
 
 // Off
 
-const offButton = document.querySelector(".off-button");
+const offButton = document.querySelector(".showcase__off-button");
 let toggle = false;
 
 offButton.addEventListener("click", ()=> {

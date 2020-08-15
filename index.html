@@ -35,16 +35,16 @@
         </ul>
     </nav>
     <section class="section main flex">
-        <div class="showcase">
-            <img src="images/whitemonitor6d.png" alt="screen" class="screen"/>
-            <video class="video" muted autoplay>
+        <div class="main__showcase">
+            <h1 class="main__header">jjcreator</h1>
+            <h2 class="main__subheader">front-end developer</h2>
+            <img src="images/whitemonitor7.png" alt="screen" class="showcase__img"/>
+            <video class="showcase__video" muted autoplay>
                 <source src="video/Neon-4.webm">
                 <source src="video/neon.mp4">
             </video>
-            <div class="video-black"></div>
-            <h1 class="main__header">jjcreator</h1>
-            <h2 class="main__subheader">front-end developer</h2>
-            <div class="vid-steering-grid">
+            <div class="showcase__blackscreen"></div>
+            <div class="showcase__steering-grid">
                 <div class="steer"></div>
                 <div class="steer"></div>
                 <div class="steer"></div>
@@ -55,7 +55,9 @@
                 <div class="steer"></div>
                 <div class="steer"></div>
             </div>
-            <div class="off-button"><i class="fas fa-power-off"></i></div>
+            <div class="showcase__off-button flex">
+                <i class="fas fa-power-off off-button__icon"></i>
+            </div>
         </div>
         <a href="#projects" class="main__button link english">see my work</a>
         <a href="#projects" class="main__button link polish">moje realizacje</a>
@@ -271,7 +273,6 @@
                 <input id="name" name="name" class="form__input" type="text" required pattern="\p{L}+\s\p{L}+"/>
                 <input id="email" name="email" class="form__input" type="text" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
             </div>
-            
             <label class="form__label flex" for="message"><i class="far fa-edit label__icon"></i><span class="english label__text">Your message</span><span class="polish label__text">Twoja wiadomość</span></label>
             <textarea id="message" class="form__input message" name="message" required></textarea>
             <button class="submit" type="submit"><span class="english">Send</span><span class="polish">Wyślij</span></button>
