@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>jjcreator - developer portfolio</title>
 </head>
 <body>
     <nav class="nav flex">
-        <div class="link logo"><a href="#">jjcreator.dev</a></div>
-        <ul class="nav-links flex">
-            <li class="link-box flex">
+        <a class="nav__logo" href="#">jjcreator.dev</a>
+        <ul class="nav__links flex">
+            <li class="links__item flex">
                 <a class="link" href="#projects">
                     <span class="english">work</span>
                     <span class="polish">projekty</span> 
                 </a>
             </li>
-            <li class="link-box flex">
+            <li class="links__item flex">
                 <a class="link" href="#about">
                     <span class="english">about me</span>
                     <span class="polish">o mnie</span>
                 </a>
             </li>
-            <li class="link-box flex">
+            <li class="links__item flex">
                 <a class="link" href="#contact">
                     <span class="english">contact</span>
                     <span class="polish">kontakt</span>
                 </a>
             </li>
-            <li class="link-box flex">
+            <li class="links__item flex">
                 <div class="flag-container flex"><img class="flag" id="english" src="images/ENG1.svg" alt="british flag"/></div>
                 <div class="flag-container flex"><img class="flag" id="polish" src="images/PL1.svg" alt="polish flag"/></div>
             </li>
@@ -38,7 +39,7 @@
         <div class="main__showcase">
             <h1 class="main__header">jjcreator</h1>
             <h2 class="main__subheader">front-end developer</h2>
-            <img src="images/whitemonitor7.png" alt="screen" class="showcase__img"/>
+            <img src="images/whitemonitor8.png" alt="screen" class="showcase__img"/>
             <video class="showcase__video" muted autoplay>
                 <source src="video/Neon-4.webm">
                 <source src="video/neon.mp4">
@@ -56,30 +57,24 @@
                 <div class="steer"></div>
             </div>
             <div class="showcase__off-button flex">
-                <i class="fas fa-power-off off-button__icon"></i>
+                <div class="off-button__toggle blue-shadow"></div>
             </div>
         </div>
-        <a href="#projects" class="main__button link english">see my work</a>
-        <a href="#projects" class="main__button link polish">moje realizacje</a>
+        <a href="#projects" class="main__button english">see my projects</a>
+        <a href="#projects" class="main__button polish">moje realizacje</a>
     </section>
     <section class="section projects" id="projects">
-        <h2 class="section__header flex"><span class="english">work</span><span class="polish">projekty</span></h2>
-        <!-- <ul class="projects__scroll flex">
-            <li class="scroll__item flex">1</li>
-            <li class="scroll__item flex">2</li>
-            <li class="scroll__item flex">3</li>
-            <li class="scroll__item flex">4</li>
-            <li class="scroll__item flex">5</li>
-        </ul> -->
-        <div class="projects__container flex">
+        <h2 class="section__header"><span class="english">projects</span><span class="polish">projekty</span></h2>
+        <h3 class="section__subheader" ><span class="english">Below are some of my favourite projects I've created</span><span class="polish">projekty</span></h3>
+        <div class="projects__container flex" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-offset="400">
             <div class="container__box--left flex">
                 <img class="projects__img" src="images/fake-test1.png" alt="monitor screen">
             </div>
             <div class="container__box--right flex">
-                <h3 class="projects__title english">Business site mockup</h3>
+                <h3 class="projects__title english">Business site</h3>
                 <h3 class="projects__title polish">Strona biznesowa</h3>
-                <p class="projects__description english">A simple business website mockup made with React and create-react-app. Created to practice using the React library, it features a clean design with a vertical navbar and a custom logo. React-router is used to redirect the user.</p>
-                <p class="projects__description polish">Prosta strona-wizytówka dla fikcyjnej firmy prawniczej, wykonana przy użyciu Reacta i create-react-app. Stworzona w celu przećwiczenia korzystania z biblioteki React, charakteryzuje się prostym i estetycznym wykonaniem z wbudowanym pionowym paskiem nawigacyjnym i specjalnie stworzonym logotypem. Do nawigacji po stronie wykorzystany został React-router.</p>
+                <p class="projects__description english">A simple business website mockup made with React and create-react-app. Created to practice using the React library, it features a clean design with a vertical navbar and a custom logo. React-router is used to redirect the user, animations added using react-animate-on-scroll</p>
+                <p class="projects__description polish">Prosta strona-wizytówka dla fikcyjnej firmy prawniczej, wykonana przy użyciu Reacta i create-react-app. Stworzona w celu przećwiczenia korzystania z biblioteki React, charakteryzuje się prostym i estetycznym wykonaniem z wbudowanym pionowym paskiem nawigacyjnym i specjalnie stworzonym logotypem. Do nawigacji wykorzystany został React-router, do animacji react-animate-on-scroll.</p>
                 <ul class="technologies flex">
                     <li class="technologies__item flex">HTML</li>
                     <li class="technologies__item flex">CSS</li>
@@ -92,14 +87,14 @@
                 </div>
             </div>
         </div>
-        <div class="projects__container flex">
+        <div class="projects__container flex" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-offset="400">
             <div class="container__box--left flex">
-                <img class="projects__img" src="images/clocks3.png" alt="monitor screen">
+                <img class="projects__img" src="images/clocks4.png" alt="monitor screen">
             </div>
             <div class="container__box--right flex">
                 <h3 class="projects__title english">World clocks</h3>
                 <h3 class="projects__title polish">Światowe zegary</h3>
-                <p class="projects__description english">A React-based app which lets you check the time in any timezone in the world and display up to 6 clocks from different timezones at the same time. My first attempt at creating a React project. The app connects to a free API to get the timezone data. The analog clock is inspired by a 'JavaScript30' course challenge by Wes Bos, but I've added some features</p>
+                <p class="projects__description english">A React-based app which lets you check the time in any timezone in the world and display up to 6 clocks from different timezones. My first attempt at creating a React project. The app fetches data from a free API. The analog clock is inspired by a "JavaScript30" course challenge by Wes Bos, but I've added some features</p>
                 <p class="projects__description polish">Aplikacja napisana w React, pozwalająca na sprawdzenie godziny w dowolnej strefie czasowej na świecie i wyświetlenie do 6 zegarów z różnych stref czasowych na raz. Moja pierwsza próba stworzenia projektu przy użyciu biblioteki React. Aplikacja łączy się z darmowym API i pobiera dane dotyczące stref czasowych. Zegar analogowy inspirowany zadaniem z kursu Wes Bos'a 'JavaScript30' z moimi modyfikacjami.</p>
                 <ul class="technologies flex">
                     <li class="technologies__item flex">HTML</li>
@@ -113,15 +108,15 @@
                 </div>
             </div>
         </div>
-        <div class="projects__container flex">
+        <div class="projects__container flex" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-offset="400">
             <div class="container__box--left flex">
                 <img class="projects__img" src="images/medicine5.png" alt="monitor screen">
             </div>
             <div class="container__box--right flex">
-                <h3 class="projects__title english">Medicine sorting system</h3>
+                <h3 class="projects__title english">Medicine box</h3>
                 <h3 class="projects__title polish">System sortowania leków</h3>
-                <p class="projects__description english">An app to keep track of what medicines you have, their indications for use and expiration date. The app automatically labels expired medicines and those which are about to expire with different colors, lets the user sort the medicines by name, expiration date and type and allows for a keyword search in the database. Data is stored externally in a JSON file. Adding and removing items is only a proof of concept and does not modify the database.</p>
-                <p class="projects__description polish">Aplikacja pozwalająca na śledzenie stanu posiadanych leków, ich zastosowania oraz daty ważności. Program automatycznie zaznacza kolorami przeterminowane lekarstwa, jak i te których termin ważności się niedługo kończy, pozwala użytkownikowi na sortowanie listy po nazwie, dacie ważności oraz typie leku, a także umożliwia przeszukiwanie listy pod kątem wybranego hasła. Dane przechywane są w zewnętrznym pliku JSON.Dodawanie i usuwanie leków działa lokalnie, lecz nie modyfikuje bazy danych.</p>
+                <p class="projects__description english">Medicine box lets you keep track of your medicines, their indications for use and expiration date. It automatically labels expired / soon to expire items, lets the user sort data by name, expiration date and type and allows for a keyword search in the database. Data is stored externally in a JSON file and is not editable.</p>
+                <p class="projects__description polish">Aplikacja do katalogowania posiadanych lekarstw, ich zastosowania oraz daty ważności. Automatycznie zaznacza kolorami przeterminowane lekarstwa oraz te których termin ważności się niedługo kończy. Pozwala użytkownikowi na sortowanie listy po nazwie, dacie ważności oraz opisie, a także umożliwia przeszukiwanie listy. Dane przechywane są w zewnętrznym pliku JSON. Dodawanie i usuwanie leków działa lokalnie, lecz nie modyfikuje bazy danych.</p>
                 <ul class="technologies flex">
                     <li class="technologies__item flex">HTML</li>
                     <li class="technologies__item flex">CSS</li>
@@ -133,15 +128,15 @@
                 </div>
             </div>
         </div>
-        <div class="projects__container flex">
+        <div class="projects__container flex" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-offset="400">
             <div class="container__box--left flex">
-                <img class="projects__img" src="images/memory7.png" alt="monitor screen">
+                <img class="projects__img" src="images/memory9.png" alt="monitor screen">
             </div>
             <div class="container__box--right flex">
-                <h3 class="projects__title english">Speed memory game</h3>
+                <h3 class="projects__title english">Memory game</h3>
                 <h3 class="projects__title polish">Szybka pamięć</h3>
                 <p class="projects__description english">A puzzle game, one of my first projects. Working on it gave me the opportunity to practice using CSS Grid, arrays and array methods. One of the challenges here was making sure the game is responsive on different screen sizes. Game made with free assets found online</p>
-                <p class="projects__description polish">Gra logiczno-zręcznościowa, jeden z moich pierwszych projektów, przy okazji którego miałem sposbność przećwiczyć znajomość CSS Grida, a także popracować na tablicach i związanych z nimi funkcjach. Pewną trudnością było dostosowanie gry do różnych rozmiarów ekranów. Gra wykonana z pełni darmowych zasóbów znalezionych w sieci.</p>
+                <p class="projects__description polish">Gra logiczna, jeden z moich pierwszych projektów, przy okazji którego miałem sposbność przećwiczyć znajomość CSS Grida, a także popracować na tablicach i związanych z nimi funkcjach. Pewną trudnością było dostosowanie gry do różnych rozmiarów ekranów. Gra wykonana z pełni darmowych zasóbów znalezionych w sieci.</p>
                 <ul class="technologies flex">
                     <li class="technologies__item flex">HTML</li>
                     <li class="technologies__item flex">CSS</li>
@@ -153,14 +148,14 @@
                 </div>
             </div>
         </div>
-        <div class="projects__container flex">
+        <div class="projects__container flex" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-offset="400">
             <div class="container__box--left flex">
                 <img class="projects__img" src="images/dorian2.png" alt="monitor screen">
             </div>
             <div class="container__box--right flex">
                 <h3 class="projects__title english">Author portfolio</h3>
                 <h3 class="projects__title polish">Portfolio pisarza</h3>
-                <p class="projects__description english">My very first serious project - a portfolio site for an fantasy author. Simple, vanilla design. No external libraries or plugins. As this was my first project, every part of it was somewhat of a challenge, but at the same time, a great learning opportunity. A lot of the steps involved in creating this project I had never done before - like using PHP, buying and configuring a domain + hosting, or deploying the site to the web</p>
+                <p class="projects__description english">My first serious project - a portfolio site for an fantasy author. Simple, vanilla design. It features a custom news sorting and a working PHP contact form. As this was my first project, every part of it was somewhat of a challenge, but at the same time, a great learning opportunity.</p>
                 <p class="projects__description polish">Mój pierwszy projekt - strona typu portfolio dla pisarza fantasy. Stonowany, prosty wygląd. Brak zewnętrznych bibliotek czy wtyczek. Ze względu na to, że był to mój pierwszy projekt, każdy jego element stanowił pewne wyzwanie, ale i też okazję do nauki i szlifowania umiejętności. Wiele rzeczy robiłem po raz pierwszy - np. użycie PHP czy zakup i konfiguarcja domeny z hostingiem, a także zamieszczenie strony w sieci.</p>
                 <ul class="technologies flex">
                     <li class="technologies__item flex">HTML</li>
@@ -175,7 +170,7 @@
         </div>
         
     </section>
-    <section class="section about" id="about">
+    <section class="section" id="about">
         <h2 class="section__header flex"><span class="english">About me</span><span class="polish">O mnie</span></h2>
         <div class="about__row flex">
             <img class="about__img" src="images/about.svg" alt="image">
@@ -279,6 +274,10 @@
         </form>
     </section>
     <script src="https://kit.fontawesome.com/906f0b3815.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
     <script src="./app.js"></script>
 </body>
 </html>
