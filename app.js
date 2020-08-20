@@ -1,17 +1,32 @@
-// Video controls
+// Video loading and controls
 
 const vid = document.querySelector(".showcase__video")
+const source = document.querySelector("source")
 const mainHeader = document.querySelector(".main__header");
 const mainSubheader = document.querySelector(".main__subheader");
-vid.playbackRate = 1.8;
+vid.playbackRate = 1.9;
+
+const shouldVidLoad = () => {
+    if(window.innerWidth > 767) {
+        source.setAttribute("src", "video/Neon-4.webm");
+    }
+    else {
+        source.setAttribute("src", "");
+    }
+    if(source.getAttribute("src") === "video/Neon-4.webm" && vid.currentTime === 0) {
+        vid.load();
+    }
+}
+
+addEventListener("load", shouldVidLoad);
 
 const steering = Array.from(document.querySelectorAll(".steer"));
 const vidSteeringGrid = document.querySelector(".showcase__steering-grid");
 
 let double = false;
 let count = 0;
-const headersArray = ["jjcreator", "coding", "design", "creativity"];
-const colors = ["#000", "#fff", "#4666FF", "orange"]
+const headersArray = ["jjcreator", "design", "code", "create"];
+const colors = ["#fff", "#000", "#4666FF", "#FF8811"]
 
 vid.addEventListener("ended", e=> {
     if (vid.style.display != "none") {
@@ -19,11 +34,13 @@ vid.addEventListener("ended", e=> {
         e.target.play();
         if(!double) {
             count < 3 ? count++ : count = 0;
-            count === 0 ? mainSubheader.innerText = "front end developer" : mainSubheader.innerText = "is my passion";
+            count === 0 ? mainSubheader.innerText = "front-end developer" : mainSubheader.innerText = "";
             vid.style.filter = `hue-rotate(${Math.floor(Math.random() * 361)}deg)`;
-            mainHeader.innerText = headersArray[count];
-            mainHeader.style.color = colors[count];
-        
+            if(vid.style.display !="none") {
+                mainHeader.innerText = headersArray[count];
+                headersArray[count] != "jjcreator" ? mainHeader.style.top = "30%":mainHeader.style.top = "28%"
+                mainHeader.style.color = colors[count];
+            }
         }
         double = !double;
     }
@@ -90,7 +107,7 @@ offButton.addEventListener("click", ()=> {
     else {
         vid.style.display = "block";
         vid.play();
-        mainHeader.style.color = "#000";
+        mainHeader.style.color = "#fff";
         offButtonToggle.style.transform = "translateX(-80%)";
         offButtonToggle.style.backgroundColor = "#4666FF";
         offButtonToggle.classList.remove("red-shadow");
@@ -109,17 +126,14 @@ const textarea = document.querySelector(".message");
 
 flagsArray.forEach(flag => {
     flag.addEventListener("click", e => {
-        if(e.target.id === "english") {
+        if(e.target.dataset.lang === "english") {
             english.forEach(text => {
                 text.style.display = "block";
             })
             polish.forEach(text => {
                 text.style.display = "none"
             });
-            nameInput.placeholder = "Your name";
-            emailInput.placeholder = "Your email";
-            subjectInput.placeholder = "Message subject";
-            textarea.placeholder = "Type in your message here";
+            document.querySelector("html").setAttribute("lang", "en");
 
         }
         else {
@@ -129,13 +143,11 @@ flagsArray.forEach(flag => {
             polish.forEach(text => {
                 text.style.display = "block"
             })
-            nameInput.placeholder = "Imię i nazwisko";
-            emailInput.placeholder = "Email";
-            subjectInput.placeholder = "Temat wiadomości";
-            textarea.placeholder = "Tu wpisz swoją wiadomość";
+            document.querySelector("html").setAttribute("lang", "pl");
         }
     })
 })
+
 
 // Icon animations
 
@@ -154,4 +166,74 @@ iconImages.forEach(icon => {
 
 const submitButton = document.querySelector(".submit")
 submitButton.addEventListener("click", e => e.preventDefault())
+
+
+// Mobile menu
+
+const mobileLinks = document.querySelectorAll(".mobile-link");
+const mobileMenu = document.querySelector(".nav__mobile");
+const mobileToggle = document.querySelector(".mobile__toggle");
+const mobileSpan1 = document.querySelector("#span1");
+const mobileSpan2 = document.querySelector("#span2")
+const mobileSpan3 = document.querySelector("#span3")
+
+let menuOpen = false;
+
+mobileToggle.addEventListener("click", ()=> {
+    if(menuOpen) {
+        mobileMenu.style.transform ="translateX(100%)";
+        mobileSpan1.style.transform = "none"
+        mobileSpan2.style.opacity = "1";
+        mobileSpan2.style.transform = "none"
+        mobileSpan3.style.transform = "none"
+    }
+    else {
+        mobileMenu.style.transform ="translateX(0%)"
+        mobileSpan1.style.transform = "translate(0px, 8px) rotate(45deg)"
+        mobileSpan2.style.opacity = "0";
+        mobileSpan2.style.transform = "scale(0.2)"
+        mobileSpan3.style.transform = "translate(0px, -8px) rotate(-45deg)"
+    }
+    menuOpen = !menuOpen
+})
+
+mobileLinks.forEach(link => link.addEventListener("click", ()=> {
+    mobileMenu.style.transform ="translateX(100%)";
+    mobileSpan1.style.transform = "none"
+    mobileSpan2.style.opacity = "1";
+    mobileSpan2.style.transform = "none"
+    mobileSpan3.style.transform = "none"
+    menuOpen = !menuOpen
+}));
+
+const langToggle = document.querySelector(".lang-toggle");
+const langToggleSwitch = document.querySelector(".lang-toggle__switch");
+let translated = false;
+
+langToggle.addEventListener("click", ()=> {
+    if(!translated) {
+        langToggleSwitch.style.transform = "translateX(55px) rotate(360deg)";
+        langToggleSwitch.style.backgroundImage = "url(images/PL1.svg)";
+        english.forEach(text => {
+            text.style.display = "none";
+        })
+        polish.forEach(text => {
+            text.style.display = "block"
+        })
+        document.querySelector("html").setAttribute("lang", "pl")
+    }
+    else {
+        langToggleSwitch.style.transform = "translateX(0px) rotate(0deg)";
+        langToggleSwitch.style.backgroundImage = "url(images/ENG1.svg)";
+        english.forEach(text => {
+            text.style.display = "block";
+        })
+        polish.forEach(text => {
+            text.style.display = "none"
+        });
+        document.querySelector("html").setAttribute("lang", "en")
+    }
+        translated = !translated
+})
+
 
