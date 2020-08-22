@@ -4,7 +4,6 @@ const vid = document.querySelector(".showcase__video")
 const source = document.querySelector("source")
 const mainHeader = document.querySelector(".main__header");
 const mainSubheader = document.querySelector(".main__subheader");
-vid.playbackRate = 1.9;
 
 const shouldVidLoad = () => {
     if(window.innerWidth > 767) {
@@ -15,6 +14,7 @@ const shouldVidLoad = () => {
     }
     if(source.getAttribute("src") === "video/Neon-4.webm" && vid.currentTime === 0) {
         vid.load();
+        vid.playbackRate = 2;
     }
 }
 
