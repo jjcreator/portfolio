@@ -1,11 +1,12 @@
 // Preloader
 
 const preloader = document.querySelector(".preloader");
-const wrapper = document.querySelector(".wrapper");
-
+const body = document.querySelector("body");
+const nav = document.querySelector(".nav")
+const mainButton = document.querySelector(".main__button");
+const mainShowcase = document.querySelector(".main__showcase")
 preloader.style.display = "flex"
-
-wrapper.style.display = "none";
+body.style.height = "100vh"
 
 // Video loading and controls
 
@@ -24,14 +25,29 @@ const shouldVidLoad = () => {
     if(source.getAttribute("src") === "video/Neon-4.webm" && vid.currentTime === 0) {
         vid.load();
         vid.playbackRate = 2;
+        vid.pause();
+        vid.style.opacity = "0"
     }
 }
 
 addEventListener("load", ()=> {
-    preloader.style.display = "none";
-    wrapper.style.display = "block";
     shouldVidLoad();
+    setTimeout(()=> {
+        preloader.style.display = "none";
+        body.style.height = "100%";
+        mainShowcase.classList.add("zoom")
+    }, 2000)
 });
+
+mainShowcase.addEventListener("animationend", ()=> {
+    mainButton.classList.add("pop");
+    vid.style.opacity = "1";
+    vid.play()
+})
+
+mainButton.addEventListener("animationend", ()=> {
+    nav.classList.add("slidein");
+})
 
 const steering = Array.from(document.querySelectorAll(".steer"));
 const vidSteeringGrid = document.querySelector(".showcase__steering-grid");
