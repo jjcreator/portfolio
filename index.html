@@ -301,7 +301,7 @@
     <section class="section" id="contact">
         <h2 class="section__header"><span class="english">contact me</span><span class="polish">kontakt</span> </h2>
         <h3 class="section__subheader" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="400" data-aos-offset="200" data-aos-once="true"><span class="english">Have a question or want to work together?</span><span class="polish">Masz pytanie? Chcesz nawiązać współpracę?</span></h3>
-        <form class="contact__form flex" name="contact-form" method="POST" data-netlify="true">
+        <form class="contact__form flex" name="contact-form" method="POST" data-netlify="true" data-netlify-recaptcha="true">
             <div class="form__row" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-offset="200" data-aos-once="false" data-aos-delay="400">
                 <label class="form__label flex" for="name"><i class="far fa-user label__icon"></i><span class="english label__text">Your Name</span><span class="polish label__text">Imię i nazwisko</span></label>
                 <label class="form__label flex" for="email"><i class="far fa-envelope label__icon"></i><span class=" label__text">Email</span></label>
@@ -311,6 +311,7 @@
             <label class="form__label flex" for="message" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-offset="100" data-aos-once="false" data-aos-delay="700"><i class="far fa-edit label__icon"></i><span class="english label__text">Your message</span><span class="polish label__text">Twoja wiadomość</span></label>
             <textarea id="message" class="form__input message" name="message" required data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-offset="000" data-aos-once="false" data-aos-delay="700"></textarea>
             <button data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-offset="000" data-aos-once="false" data-aos-delay="1000" class="submit" type="submit"><span class="english">Send</span><span class="polish">Wyślij</span></button>
+            <div data-netlify-recaptcha="true"></div>
         </form>
     </section>
     <footer class="footer flex">
