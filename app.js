@@ -1,3 +1,12 @@
+// Preloader
+
+const preloader = document.querySelector(".preloader");
+const wrapper = document.querySelector(".wrapper");
+
+preloader.style.display = "flex"
+
+wrapper.style.display = "none";
+
 // Video loading and controls
 
 const vid = document.querySelector(".showcase__video")
@@ -18,7 +27,11 @@ const shouldVidLoad = () => {
     }
 }
 
-addEventListener("load", shouldVidLoad);
+addEventListener("load", ()=> {
+    preloader.style.display = "none";
+    wrapper.style.display = "block";
+    shouldVidLoad();
+});
 
 const steering = Array.from(document.querySelectorAll(".steer"));
 const vidSteeringGrid = document.querySelector(".showcase__steering-grid");
@@ -148,7 +161,6 @@ flagsArray.forEach(flag => {
     })
 })
 
-
 // Icon animations
 
 const iconImages = document.querySelectorAll(".item__img");
@@ -160,7 +172,6 @@ iconImages.forEach(icon => {
     icon.classList.remove("animatedIcon");
 });
 })
-
 
 // Contact form 
 
