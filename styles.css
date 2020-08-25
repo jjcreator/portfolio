@@ -1081,8 +1081,7 @@ body {
 }
 
 .form__captcha {
-    width: 100%;
-    margin: 0 10px;
+    margin: 20px auto 0 auto;
 }
 
 .submit {
