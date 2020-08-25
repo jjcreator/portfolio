@@ -1080,6 +1080,11 @@ body {
     resize: none;
 }
 
+.form__captcha {
+    width: 100%;
+    margin: 0 10px;
+}
+
 .submit {
     padding: 10px 30px;
     background-color: var(--attention-color);
