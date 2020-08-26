@@ -1154,7 +1154,6 @@ animation: slidein 800ms ease-in forwards;
     position: relative;
     background: #272727;
     color: #fff;
-    height: 100vh;
 }
 
 .contact__form {
