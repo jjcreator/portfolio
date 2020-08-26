@@ -1156,6 +1156,10 @@ animation: slidein 800ms ease-in forwards;
     color: #fff;
 }
 
+.form__hidden {
+    display: none;
+}
+
 .contact__form {
     max-width: 1000px;
     min-width: 350px;
