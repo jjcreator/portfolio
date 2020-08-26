@@ -32,20 +32,20 @@ const shouldVidLoad = () => {
 
 addEventListener("load", ()=> {
     shouldVidLoad();
-    setTimeout(()=> {
-        preloader.style.display = "none";
-        body.style.height = "100%";
-        mainShowcase.classList.add("zoom")
-    }, 2000)
+    preloader.style.display = "none";
+    body.style.height = "100%";
+    mainShowcase.classList.add("zoom");
 });
 
 mainShowcase.addEventListener("animationend", ()=> {
+    mainButton.style.opacity = "1"
     mainButton.classList.add("pop");
     vid.style.opacity = "1";
     vid.play()
 })
 
 mainButton.addEventListener("animationend", ()=> {
+    mainButton.classList.remove("pop");
     nav.classList.add("slidein");
 })
 

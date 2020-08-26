@@ -617,18 +617,18 @@ animation: slidein 800ms ease-in forwards;
     position: absolute;
     bottom: 7%;
     left: 50%;
-    transform: translateX(-50%) scale(0);
+    transform: translateX(-50%);
     cursor: pointer;
     z-index: 5;
     transition: all 300ms ease-in;
     border-radius: 120px;
-    /* box-shadow: 0 0 10px 0px black; */
     text-align: center;
     text-decoration: none;
     color: var(--text-color);
     font-size: 25px;
     min-width: fit-content;
     animation-delay: 1000ms;
+    opacity: 0;
 }
 
 .pop {
@@ -929,6 +929,7 @@ animation: slidein 800ms ease-in forwards;
     position: relative;
     background-color: #fff;
     min-height: 80vh;
+    padding-bottom: 15vh;
 }
 
 #about::after{
@@ -1153,7 +1154,7 @@ animation: slidein 800ms ease-in forwards;
     position: relative;
     background: #272727;
     color: #fff;
-    height: 90vh;
+    height: 100vh;
 }
 
 .contact__form {
@@ -1216,6 +1217,7 @@ animation: slidein 800ms ease-in forwards;
 
 .form__captcha {
     margin: 20px auto 0 auto;
+    height: 20px;
 }
 
 .submit {
