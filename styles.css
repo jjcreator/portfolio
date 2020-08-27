@@ -144,6 +144,7 @@ body {
     box-shadow: 0px 0px 15px rgb(36, 36, 36);
     transform: translateY(-100%);
     animation-delay: 1000ms;
+    min-height: fit-content;
 }
 
 .slidein {
@@ -291,7 +292,7 @@ animation: slidein 800ms ease-in forwards;
 }
 
 .mobile-link {
-    font-size: 30px;
+    font-size: 28px;
     color: var(--primary-color)
 }
 
@@ -369,6 +370,22 @@ animation: slidein 800ms ease-in forwards;
     }
 }
 
+@media (orientation: landscape) {
+    .mobile__menu__item {
+        margin: 2vh 0;
+    }
+}
+
+@media (max-height: 450px) and (orientation: landscape) {
+    .nav {
+        height: 12vh;
+    }
+    .mobile__toggle {
+        top: 6vh;
+    }
+
+}
+
 
 
 /* ---------------- Sections ---------------- */
@@ -440,6 +457,12 @@ animation: slidein 800ms ease-in forwards;
     }
     .section__header {
         font-size: 30px;
+    }
+}
+
+@media (orientation: landscape) {
+    .section {
+        padding-top: 12vh;
     }
 }
 
@@ -968,6 +991,7 @@ animation: slidein 800ms ease-in forwards;
     flex: 1;
     padding: 0 20px;
     font-size: 16px;
+    text-align: justify;
 }
 
 .about__skills {
@@ -1155,6 +1179,7 @@ animation: slidein 800ms ease-in forwards;
     position: relative;
     background: #272727;
     color: #fff;
+    padding-top: 15vh;
 }
 
 .form__hidden {
@@ -1288,7 +1313,7 @@ animation: slidein 800ms ease-in forwards;
 /* Footer */
 
 .footer {
-    height: 15vh;
+    height: 12vh;
     background-color: #000;
     z-index: 10;
     color: #fff;

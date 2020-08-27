@@ -189,12 +189,6 @@ iconImages.forEach(icon => {
 });
 })
 
-// Contact form 
-
-const submitButton = document.querySelector(".submit")
-// submitButton.addEventListener("click", e => e.preventDefault())
-
-
 // Mobile menu
 
 const mobileLinks = document.querySelectorAll(".mobile-link");
