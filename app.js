@@ -8,7 +8,7 @@ const mainShowcase = document.querySelector(".main__showcase")
 preloader.style.display = "flex"
 body.style.height = "100vh"
 
-// Video loading and controls
+// Video loading
 
 const vid = document.querySelector(".showcase__video")
 const source = document.querySelector("source")
@@ -30,6 +30,8 @@ const shouldVidLoad = () => {
     }
 }
 
+// Initial animations
+
 addEventListener("load", ()=> {
     shouldVidLoad();
     preloader.style.display = "none";
@@ -49,31 +51,32 @@ mainButton.addEventListener("animationend", ()=> {
     nav.classList.add("slidein");
 })
 
-const steering = Array.from(document.querySelectorAll(".steer"));
-const vidSteeringGrid = document.querySelector(".showcase__steering-grid");
+// Video effects
 
-let double = false;
-let count = 0;
+const vidSteeringGrid = document.querySelector(".main__vid-steering-grid");
+const gridItem = Array.from(document.querySelectorAll(".main__grid-item"));
+let played2times = false;
+let headerNumber = 0;
 const headersArray = ["jjcreator", "design", "code", "create"];
 const colors = ["#fff", "#000", "#4666FF", "#FF8811"]
 
-vid.addEventListener("ended", e=> {
+vid.addEventListener("ended", () => {
     if (vid.style.display != "none") {
-        e.target.currentTime = 0;
-        e.target.play();
-        if(!double) {
-            count < 3 ? count++ : count = 0;
-            count === 0 ? mainSubheader.innerText = "front-end developer" : mainSubheader.innerText = "";
+        vid.currentTime = 0;
+        vid.play();
+        if(played2times) {
+            headerNumber < 3 ? headerNumber++ : headerNumber = 0;
+            headerNumber === 0 ? mainSubheader.innerText = "front-end developer" : mainSubheader.innerText = "";
             vid.style.filter = `hue-rotate(${Math.floor(Math.random() * 361)}deg)`;
             if(vid.style.display !="none") {
-                mainHeader.innerText = headersArray[count];
-                headersArray[count] != "jjcreator" ? mainHeader.style.top = "30%":mainHeader.style.top = "28%"
-                mainHeader.style.color = colors[count];
+                mainHeader.innerText = headersArray[headerNumber];
+                headersArray[headerNumber] != "jjcreator" ? mainHeader.style.top = "30%":mainHeader.style.top = "28%"
+                mainHeader.style.color = colors[headerNumber];
             }
         }
-        double = !double;
+        played2times = !played2times;
     }
-    else {count = 0}
+    else {played2times = 0}
 })
 
 vidSteeringGrid.addEventListener("mouseout", ()=> {
@@ -81,8 +84,8 @@ vidSteeringGrid.addEventListener("mouseout", ()=> {
     vid.style.left = "50%"
 })
 
-steering.forEach(item => item.addEventListener("mouseover", ()=> {
-    switch(steering.indexOf(item)) {
+gridItem.forEach(item => item.addEventListener("mouseover", ()=> {
+    switch(gridItem.indexOf(item)) {
         case 0: vid.style.left = "48%";
                 vid.style.top = "8%";
                 break;
@@ -116,30 +119,30 @@ steering.forEach(item => item.addEventListener("mouseover", ()=> {
 
 // Off
 
-const offButton = document.querySelector(".showcase__off-button");
-const offButtonToggle = document.querySelector(".off-button__toggle")
-let toggle = false;
+const vidSwitch = document.querySelector(".main__vid-switch");
+const switchCircle = document.querySelector(".main__switch-circle")
+let vidOff = false;
 
-offButton.addEventListener("click", ()=> {
-    toggle = !toggle;
-    if(toggle) {
+vidSwitch.addEventListener("click", ()=> {
+    vidOff = !vidOff
+    if(vidOff) {
         vid.style.display = "none";
         vid.pause();
         mainHeader.innerText = "jjcreator";
         mainSubheader.innerText = "front end developer"
         mainHeader.style.color = "#fff"
-        offButtonToggle.style.transform = "translateX(80%)";
-        offButtonToggle.style.backgroundColor = "var(--attention-color)";
-        offButtonToggle.classList.add("red-shadow");
+        switchCircle.style.transform = "translateX(80%)";
+        switchCircle.style.backgroundColor = "var(--attention-color)";
+        switchCircle.classList.add("main__switch-circle--red-shadow");
 
     }
     else {
         vid.style.display = "block";
         vid.play();
         mainHeader.style.color = "#fff";
-        offButtonToggle.style.transform = "translateX(-80%)";
-        offButtonToggle.style.backgroundColor = "#4666FF";
-        offButtonToggle.classList.remove("red-shadow");
+        switchCircle.style.transform = "translateX(-80%)";
+        switchCircle.style.backgroundColor = "#4666FF";
+        switchCircle.classList.remove("main__switch-circle--red-shadow");
     }
 })
 
@@ -192,8 +195,8 @@ iconImages.forEach(icon => {
 // Mobile menu
 
 const mobileLinks = document.querySelectorAll(".mobile-link");
-const mobileMenu = document.querySelector(".nav__mobile");
-const mobileToggle = document.querySelector(".mobile__toggle");
+const mobileMenu = document.querySelector(".mobile");
+const mobileToggle = document.querySelector(".hamburger");
 const mobileSpan1 = document.querySelector("#span1");
 const mobileSpan2 = document.querySelector("#span2")
 const mobileSpan3 = document.querySelector("#span3")
