@@ -465,7 +465,6 @@ animation: slidein 800ms ease-in forwards;
     z-index: 1;
     min-height: 100vh;
     padding-bottom: 9vh;
-    padding-top: 0;
 }
 
 .main::after {
