@@ -44,7 +44,7 @@ addEventListener("load", ()=> {
         initializeMainContent();
     }
     else {
-        vid.addEventListener("loadstart", initializeMainContent);
+        vid.addEventListener("canplaythrough", initializeMainContent);
     }
 });
 
@@ -53,7 +53,7 @@ mainShowcase.addEventListener("animationend", ()=> {
     mainButton.classList.add("pop");
     vid.style.opacity = "1";
     vid.play()
-    vid.removeEventListener("load", initializeMainContent)
+    vid.removeEventListener("canplaythrough", initializeMainContent)
 })
 
 mainButton.addEventListener("animationend", ()=> {
