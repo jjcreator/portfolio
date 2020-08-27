@@ -417,8 +417,6 @@ animation: slidein 800ms ease-in forwards;
     
 }
 
-
-
 @media (max-width: 1400px) {
     .section {
         padding: 5vh 2.5vw 5vh 2.5vw;
@@ -467,6 +465,7 @@ animation: slidein 800ms ease-in forwards;
     z-index: 1;
     min-height: 100vh;
     padding-bottom: 9vh;
+    padding-top: 0;
 }
 
 .main::after {

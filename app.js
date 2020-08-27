@@ -8,6 +8,12 @@ const mainShowcase = document.querySelector(".main__showcase")
 preloader.style.display = "flex"
 body.style.height = "100vh"
 
+const initializeMainContent = () => {
+    preloader.style.display = "none";
+    body.style.height = "100%";
+    mainShowcase.classList.add("zoom");
+}
+
 // Video loading
 
 const vid = document.querySelector(".showcase__video")
@@ -34,9 +40,12 @@ const shouldVidLoad = () => {
 
 addEventListener("load", ()=> {
     shouldVidLoad();
-    preloader.style.display = "none";
-    body.style.height = "100%";
-    mainShowcase.classList.add("zoom");
+    if(window.innerWidth < 767) {
+        initializeMainContent();
+    }
+    else {
+        vid.addEventListener("loadstart", initializeMainContent);
+    }
 });
 
 mainShowcase.addEventListener("animationend", ()=> {
@@ -44,6 +53,7 @@ mainShowcase.addEventListener("animationend", ()=> {
     mainButton.classList.add("pop");
     vid.style.opacity = "1";
     vid.play()
+    vid.removeEventListener("load", initializeMainContent)
 })
 
 mainButton.addEventListener("animationend", ()=> {
@@ -148,7 +158,7 @@ vidSwitch.addEventListener("click", ()=> {
 
 // Language change
 
-const flagsArray = document.querySelectorAll(".flag");
+const flagsArray = document.querySelectorAll(".nav__flag");
 const english = document.querySelectorAll(".english");
 const polish = document.querySelectorAll(".polish");
 const nameInput = document.querySelector(".name");
