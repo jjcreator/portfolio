@@ -551,7 +551,8 @@ animation: slidein 800ms ease-in forwards;
     width: 50%;
     transform: translateX(-50%);
     z-index:-1;
-    transition: left 500ms ease-in, top 500ms ease-in, filter 1000ms ease-in;
+    transition: left 500ms ease-in, top 500ms ease-in, filter 1000ms ease-in, opacity 300ms ease-in;
+    opacity: 0;
 }
 
 .main__blackscreen {

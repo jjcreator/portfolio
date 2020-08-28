@@ -38,7 +38,8 @@ shouldVidLoad();
 // Initial animations
 
 mainShowcase.addEventListener("animationend", ()=> {
-    vid.removeEventListener("canplaythrough", initializeMainContent)
+    vid.removeEventListener("canplaythrough", initializeMainContent);
+    vid.style.opacity = "1";
     nav.classList.add("slidein");
 })
 
