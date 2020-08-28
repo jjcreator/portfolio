@@ -23,8 +23,9 @@ const mainSubheader = document.querySelector(".main__subheader");
 
 const shouldVidLoad = () => {
     if(window.innerWidth > 767) {
-        source.setAttribute("src", "video/Neon-4.webm");
+        source.setAttribute("src", "video/Neon-5.webm");
         vid.load();
+        vid.style.opacity = "0";
         vid.playbackRate = 2;
         vid.addEventListener("canplaythrough", initializeMainContent)
     }
@@ -40,7 +41,7 @@ shouldVidLoad();
 mainShowcase.addEventListener("animationend", ()=> {
     mainButton.style.opacity = "1"
     mainButton.classList.add("pop");
-    vid.play();
+    vid.style.opacity = "1";
     vid.removeEventListener("canplaythrough", initializeMainContent)
 })
 
