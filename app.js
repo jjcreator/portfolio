@@ -191,7 +191,7 @@ iconImages.forEach(icon => {
 
 // Mobile menu
 
-const mobileLinks = document.querySelectorAll(".mobile-link");
+const mobileLinks = document.querySelectorAll(".mobile__link");
 const mobileMenu = document.querySelector(".mobile");
 const mobileToggle = document.querySelector(".hamburger");
 const mobileSpan1 = document.querySelector("#span1");
