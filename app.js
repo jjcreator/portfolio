@@ -23,17 +23,16 @@ const mainSubheader = document.querySelector(".main__subheader");
 
 const shouldVidLoad = () => {
     if(window.innerWidth > 767) {
-        source.setAttribute("src", "video/Neon-4.webm");
+        source.setAttribute("src", "video/Neon.mp4");
     }
     else {
         initializeMainContent();
     }
-    if(source.getAttribute("src") === "video/Neon-4.webm") {
+    if(source.getAttribute("src") === "video/Neon.mp4") {
         vid.load();
         vid.playbackRate = 2;
         vid.pause();
-        vid.style.opacity = "0";
-        vid.addEventListener("canplaythrough", initializeMainContent)
+        vid.addEventListener("canplay", initializeMainContent)
     }
 }
 
@@ -44,7 +43,6 @@ shouldVidLoad();
 mainShowcase.addEventListener("animationend", ()=> {
     mainButton.style.opacity = "1"
     mainButton.classList.add("pop");
-    vid.style.opacity = "1";
     vid.play();
     vid.removeEventListener("canplay", initializeMainContent)
 })
