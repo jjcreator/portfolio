@@ -33,7 +33,7 @@ const shouldVidLoad = () => {
         vid.playbackRate = 2;
         vid.pause();
         vid.style.opacity = "0";
-        vid.addEventListener("canplay", initializeMainContent)
+        vid.addEventListener("canplaythrough", initializeMainContent)
     }
 }
 
