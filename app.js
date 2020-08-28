@@ -14,32 +14,27 @@ const initializeMainContent = () => {
     mainShowcase.classList.add("zoom");
 }
 
-window.addEventListener("load", initializeMainContent)
-
 // Video loading
 
 const vid = document.querySelector(".main__video")
 const source = document.querySelector("source")
 const mainHeader = document.querySelector(".main__header");
 const mainSubheader = document.querySelector(".main__subheader");
-vid.playbackRate = 2;
 
-// const shouldVidLoad = () => {
-//     if(window.innerWidth > 767) {
-//         source.setAttribute("src", "video/Neon-4.webm");
-//     }
-//     else {
-//         initializeMainContent();
-//     }
-//     if(source.getAttribute("src") === "video/Neon-4.webm") {
-//         vid.load();
-//         vid.playbackRate = 2;
-//         vid.pause();
-//         vid.addEventListener("canplay", initializeMainContent)
-//     }
-// }
+const shouldVidLoad = () => {
+    if(window.innerWidth > 767) {
+        source.setAttribute("src", "video/Neon-4.webm");
+        vid.load();
+        vid.playbackRate = 2;
+        vid.pause();
+        vid.addEventListener("canplaythrough", initializeMainContent)
+    }
+    else {
+        initializeMainContent();
+    }
+}
 
-// shouldVidLoad();
+shouldVidLoad();
 
 // Initial animations
 
@@ -47,7 +42,7 @@ mainShowcase.addEventListener("animationend", ()=> {
     mainButton.style.opacity = "1"
     mainButton.classList.add("pop");
     vid.play();
-    vid.removeEventListener("canplay", initializeMainContent)
+    vid.removeEventListener("canplaythrough", initializeMainContent)
 })
 
 mainButton.addEventListener("animationend", ()=> {
