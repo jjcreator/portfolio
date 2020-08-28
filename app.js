@@ -39,17 +39,16 @@ shouldVidLoad();
 // Initial animations
 
 mainShowcase.addEventListener("animationend", ()=> {
-    mainButton.style.opacity = "1"
-    mainButton.classList.add("pop");
+    vid.removeEventListener("canplaythrough", initializeMainContent)
+    nav.classList.add("slidein");
     vid.pause();
     vid.style.opacity = "1";
     vid.play();
-    vid.removeEventListener("canplaythrough", initializeMainContent)
 })
 
-mainButton.addEventListener("animationend", ()=> {
-    mainButton.classList.remove("pop");
-    nav.classList.add("slidein");
+nav.addEventListener("animationend", ()=> {
+    mainButton.style.opacity = "1"
+    mainButton.classList.add("pop");
 })
 
 // Video effects
