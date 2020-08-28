@@ -41,9 +41,7 @@ shouldVidLoad();
 mainShowcase.addEventListener("animationend", ()=> {
     vid.removeEventListener("canplaythrough", initializeMainContent)
     nav.classList.add("slidein");
-    vid.pause();
     vid.style.opacity = "1";
-    vid.play();
 })
 
 nav.addEventListener("animationend", ()=> {
