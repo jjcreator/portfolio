@@ -26,7 +26,6 @@ const shouldVidLoad = () => {
         source.setAttribute("src", "video/Neon-4.webm");
         vid.load();
         vid.playbackRate = 2;
-        vid.pause();
         vid.addEventListener("canplaythrough", initializeMainContent)
     }
     else {
