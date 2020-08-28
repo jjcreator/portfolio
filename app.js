@@ -14,29 +14,32 @@ const initializeMainContent = () => {
     mainShowcase.classList.add("zoom");
 }
 
+window.addEventListener("load", initializeMainContent)
+
 // Video loading
 
 const vid = document.querySelector(".main__video")
 const source = document.querySelector("source")
 const mainHeader = document.querySelector(".main__header");
 const mainSubheader = document.querySelector(".main__subheader");
+vid.playbackRate = 2;
 
-const shouldVidLoad = () => {
-    if(window.innerWidth > 767) {
-        source.setAttribute("src", "video/Neon.mp4");
-    }
-    else {
-        initializeMainContent();
-    }
-    if(source.getAttribute("src") === "video/Neon.mp4") {
-        vid.load();
-        vid.playbackRate = 2;
-        vid.pause();
-        vid.addEventListener("canplay", initializeMainContent)
-    }
-}
+// const shouldVidLoad = () => {
+//     if(window.innerWidth > 767) {
+//         source.setAttribute("src", "video/Neon-4.webm");
+//     }
+//     else {
+//         initializeMainContent();
+//     }
+//     if(source.getAttribute("src") === "video/Neon-4.webm") {
+//         vid.load();
+//         vid.playbackRate = 2;
+//         vid.pause();
+//         vid.addEventListener("canplay", initializeMainContent)
+//     }
+// }
 
-shouldVidLoad();
+// shouldVidLoad();
 
 // Initial animations
 
