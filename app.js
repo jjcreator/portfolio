@@ -41,7 +41,9 @@ shouldVidLoad();
 mainShowcase.addEventListener("animationend", ()=> {
     mainButton.style.opacity = "1"
     mainButton.classList.add("pop");
+    vid.pause();
     vid.style.opacity = "1";
+    vid.play();
     vid.removeEventListener("canplaythrough", initializeMainContent)
 })
 
