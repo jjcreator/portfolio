@@ -544,7 +544,7 @@ animation: slidein 800ms ease-in forwards;
     display: none;
 }
 
-.showcase__video {
+.main__video {
     position: absolute;
     top: 10%;
     left: 50%;
@@ -708,11 +708,11 @@ animation: slidein 800ms ease-in forwards;
     .main__subheader {
         font-size: 20px;
     }
-    .showcase__off-button {
+    .main__vid-switch {
         width: 5%;
         height: 3.5%;
     }
-    .off-button__toggle {
+    .main__switch-circle {
         width: 1.2vw;
         height: 1.2vw;
     }
@@ -737,10 +737,10 @@ animation: slidein 800ms ease-in forwards;
     .main__header--mobile, .main__subheader--mobile {
         display: block
     }
-    .showcase__off-button {
+    .main__vid-switch {
         display: none;
     }
-    .showcase__steering-grid {
+    .main__switch-circle {
         display: none;
     }
 }
