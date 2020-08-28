@@ -23,7 +23,7 @@ const mainSubheader = document.querySelector(".main__subheader");
 
 const shouldVidLoad = () => {
     if(window.innerWidth > 767) {
-        source.setAttribute("src", "video/Neon-6.webm");
+        source.setAttribute("src", "video/Neon-5.webm");
         vid.load();
         vid.style.opacity = "0";
         vid.playbackRate = 2;
