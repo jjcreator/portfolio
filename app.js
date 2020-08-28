@@ -36,10 +36,11 @@ const shouldVidLoad = () => {
     }
 }
 
+shouldVidLoad();
+
 // Initial animations
 
 addEventListener("load", ()=> {
-    shouldVidLoad();
     if(window.innerWidth < 767) {
         initializeMainContent();
     }
