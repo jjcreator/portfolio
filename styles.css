@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Fjord+One&display=swap');
-@import url("./fonts/ScriptMTBold.ttf");
+
+@font-face {
+    font-family: "Script MT";
+    src: url("fonts/ScriptMTBold.ttf") format('truetype');
+}
 
 :root {
     --primary-color: #fff;
