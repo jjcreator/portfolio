@@ -89,7 +89,6 @@ body {
     display: inline-block;
     -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
     animation: sk-stretchdelay 1.2s infinite ease-in-out;
-    box-shadow: 2px 2px 5px black;
   }
   
   .preloader__spinner .preloader__rect2 {
@@ -132,7 +131,9 @@ body {
       font-size: 20px;
       top: 60%;
       left: 50%;
-      transform: translateX(-50%)
+      transform: translateX(-50%);
+      color: var(--text-color);
+      border-bottom: 4px solid var(--attention-color);
   }
 
 /* ---------------- Navigation ---------------- */
