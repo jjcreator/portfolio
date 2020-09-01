@@ -946,11 +946,10 @@ animation: slidein 800ms ease-in forwards;
 }
 
 .about__row {
-    width: 90%;
+    width: 80%;
     margin: 2% 0;
-    align-items: flex-start;
     background-color: #e5e5e5;
-    padding: 25px;
+    padding: 20px;
     border-radius: 10px;
     z-index: 1;
     box-shadow: 0 0 5px black;
@@ -958,8 +957,9 @@ animation: slidein 800ms ease-in forwards;
 }
 
 .about__img {
-    width: 25%;
-    background-color: #fff;
+    min-height: 150px;
+    max-height: 250px;
+    width: 30%;
 }
 
 .about__text {
@@ -970,7 +970,7 @@ animation: slidein 800ms ease-in forwards;
 }
 
 .about__skills {
-    width: 90%;
+    width: 80%;
     justify-content: space-between;
     max-width: 1500px;
 }
