@@ -12,7 +12,7 @@ const initializeMainContent = () => {
     preloader.style.display = "none";
     body.style.height = "100%";
     mainShowcase.classList.add("zoom");
-    scrollTo(0,0);
+    window.scrollTo(0,0);
 }
 
 // Video loading
