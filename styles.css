@@ -405,10 +405,11 @@ animation: slidein 800ms ease-in forwards;
     border-bottom: 5px solid var(--attention-color);
     margin-top: 3vh;
     color: inherit;
+    font-weight: 500;
 }
 
 .section__subheader {
-    font-weight: normal;
+    font-weight: 500;
     padding: 20px;
     position: relative;
     max-width: 90%;
