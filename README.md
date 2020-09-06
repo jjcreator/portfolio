@@ -2,7 +2,7 @@
 
 My portfolio website, showcasing my projects and skills. Clean design with some special effects like animations or a video background to make it easier on the eyes. 
 
-[![jjcreator.dev - developer portfolio](/portfolio.png)](https://www.jjcreator.dev)
+[![jjcreator.dev - developer portfolio](images/portfolio.png)](https://www.jjcreator.dev)
 
 
 ## Technologies
