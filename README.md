@@ -21,6 +21,7 @@ A small portfolio site created to serve as my business card in the IT world. It 
 * hero section with a video background inside a picture to create an illusion of a working monitor screen. The monitor can be "turned off" and back "on" via a toggle.
 * projects section
 * contact form with html validation + additional honeypot field for spam prevention (on top of what Netlify already employs as a default)
+* available in English and Polish - full translation at the click of a button
 * responsive
 * animations using animate-on-scroll + some simple custom ones
 
