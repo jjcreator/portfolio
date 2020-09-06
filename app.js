@@ -115,7 +115,7 @@ gridItem.forEach(item => item.addEventListener("mouseover", ()=> {
     }
 }))
 
-// Off
+// Video off switch
 
 const vidSwitch = document.querySelector(".main__vid-switch");
 const switchCircle = document.querySelector(".main__switch-circle")
@@ -153,6 +153,7 @@ const nameInput = document.querySelector(".name");
 const emailInput = document.querySelector(".email");
 const subjectInput = document.querySelector(".subject");
 const textarea = document.querySelector(".message");
+let translated = false;
 
 flagsArray.forEach(flag => {
     flag.addEventListener("click", e => {
@@ -164,6 +165,9 @@ flagsArray.forEach(flag => {
                 text.style.display = "none"
             });
             document.querySelector("html").setAttribute("lang", "en");
+            translated = false;
+            langToggleSwitch.style.transform = "translateX(0px) rotate(0deg)";
+            langToggleSwitch.style.backgroundImage = "url(images/ENG1.svg)";
 
         }
         else {
@@ -174,6 +178,10 @@ flagsArray.forEach(flag => {
                 text.style.display = "block"
             })
             document.querySelector("html").setAttribute("lang", "pl");
+            translated = true;
+            langToggleSwitch.style.transform = "translateX(55px) rotate(360deg)";
+            langToggleSwitch.style.backgroundImage = "url(images/PL1.svg)";
+            
         }
     })
 })
@@ -206,8 +214,8 @@ mobileToggle.addEventListener("click", ()=> {
         mobileMenu.style.transform ="translateX(100%)";
         mobileSpan1.style.transform = "none"
         mobileSpan2.style.opacity = "1";
-        mobileSpan2.style.transform = "none"
-        mobileSpan3.style.transform = "none"
+        mobileSpan2.style.transform = "none";
+        mobileSpan3.style.transform = "none";
     }
     else {
         mobileMenu.style.transform ="translateX(0%)"
@@ -230,7 +238,6 @@ mobileLinks.forEach(link => link.addEventListener("click", ()=> {
 
 const langToggle = document.querySelector(".lang-toggle");
 const langToggleSwitch = document.querySelector(".lang-toggle__switch");
-let translated = false;
 
 langToggle.addEventListener("click", ()=> {
     if(!translated) {
