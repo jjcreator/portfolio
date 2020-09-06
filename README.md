@@ -27,7 +27,7 @@ A small portfolio site created to serve as my business card in the IT world. It 
 
 ## Launch
 
-Domain registered through a registrar, page hosted on Netlify. Launched as (https://www.jjcreator.dev)
+Domain registered through a registrar, page hosted on Netlify. Launched as https://www.jjcreator.dev
 
 ## Sources
 
