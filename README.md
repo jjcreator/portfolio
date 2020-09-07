@@ -1,6 +1,6 @@
 # My portfolio - jjcreator.dev
 
-My portfolio website, showcasing my projects and skills. Clean design with some special effects like animations or a video background to make it easier on the eyes. 
+My portfolio website, showcasing my projects and skills. Clean design with some special effects to make it more fun and interactive. 
 
 [![jjcreator.dev - developer portfolio](images/portfolio.png)](https://www.jjcreator.dev)
 
