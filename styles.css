@@ -1294,12 +1294,27 @@ animation: slidein 800ms ease-in forwards;
 /* Footer */
 
 .footer {
-    height: 12vh;
+    padding: 20px;
+    min-height: 12vh;
     background-color: #000;
     z-index: 10;
     color: #fff;
+    flex-direction: column;
 }
 
 .footer__text {
     text-align: center;
+}
+
+.footer__row {
+    width: 100%;
+}
+
+.footer__row:first-child {
+    margin-bottom: 20px;
+
+}
+
+.footer__link {
+    margin: 0 40px;
 }
