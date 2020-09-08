@@ -413,6 +413,7 @@ animation: slidein 800ms ease-in forwards;
     padding: 20px;
     position: relative;
     max-width: 90%;
+    text-align: center;
 }
 
 .main-container {
@@ -1160,7 +1161,7 @@ animation: slidein 800ms ease-in forwards;
     position: relative;
     background: #272727;
     color: #fff;
-    padding-top: 15vh;
+    padding-top: 20vh;
 }
 
 .form__hidden {
@@ -1245,6 +1246,12 @@ animation: slidein 800ms ease-in forwards;
 
 .submit:hover {
     color: var(--primary-color);
+}
+
+@media (min-width: 1401px) {
+    .contact__form {
+        width: 26%;
+    }
 }
 
 @media (max-width: 1400px) {
