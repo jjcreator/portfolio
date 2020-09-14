@@ -26,7 +26,7 @@ const shouldVidLoad = () => {
     if(window.innerWidth > 767) {
         source.setAttribute("src", "video/Neon-6.webm");
         vid.load();
-        vid.playbackRate = 2;
+        vid.playbackRate = 2.2;
         vid.addEventListener("canplaythrough", initializeMainContent)
     }
     else {
@@ -51,8 +51,6 @@ nav.addEventListener("animationend", ()=> {
 
 // Video effects
 
-const vidSteeringGrid = document.querySelector(".main__vid-steering-grid");
-const gridItem = Array.from(document.querySelectorAll(".main__grid-item"));
 let played2times = false;
 let headerNumber = 0;
 const headersArray = ["jjcreator", "design", "code", "create"];
@@ -76,44 +74,6 @@ vid.addEventListener("ended", () => {
     }
     else {played2times = 0}
 })
-
-vidSteeringGrid.addEventListener("mouseout", ()=> {
-    vid.style.top = "10%";
-    vid.style.left = "50%"
-})
-
-gridItem.forEach(item => item.addEventListener("mouseover", ()=> {
-    switch(gridItem.indexOf(item)) {
-        case 0: vid.style.left = "48%";
-                vid.style.top = "8%";
-                break;
-        case 1: vid.style.top = "8%";
-                vid.style.left = "50%";
-                break;
-        case 2: vid.style.top = "8%";
-                vid.style.left="52%";
-                break;
-        case 3: vid.style.left = "48%";
-                vid.style.top = "10%";
-                break;
-        case 4: vid.style.top = "10%";
-                vid.style.left= "50%";
-                break;
-        case 5: vid.style.left = "52%";
-                vid.style.top = "10%";
-                break;
-        case 6: vid.style.top = "12%";
-                vid.style.left = "48%";
-                break;
-        case 7: vid.style.top = "12%";
-                vid.style.left = "50%";
-                break;
-        case 8: vid.style.top = "12%";
-                vid.style.left = "52%";
-                break; 
-        default: break;
-    }
-}))
 
 // Video off switch
 
