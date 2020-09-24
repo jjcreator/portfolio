@@ -1235,7 +1235,8 @@ body {
 .contact__form {
     max-width: 1000px;
     flex-direction: column;
-    width: 30%;
+    width: 33%;
+    max-width: 440px;
     padding: 20px;
     background-size: cover;
     background-attachment: fixed;
@@ -1310,12 +1311,6 @@ body {
 
 .submit:hover {
     color: var(--primary-color);
-}
-
-@media (min-width: 1401px) {
-    .contact__form {
-        width: 26%;
-    }
 }
 
 @media (max-width: 1400px) {
