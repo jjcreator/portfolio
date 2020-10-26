@@ -54,7 +54,6 @@ nav.addEventListener("animationend", ()=> {
 let played2times = false;
 let headerNumber = 0;
 const headersArray = ["jjcreator", "design", "code", "create"];
-const colors = ["#fff", "#000", "#4666FF", "#FF8811"]
 
 vid.addEventListener("ended", () => {
     if (vid.style.display != "none") {
@@ -66,8 +65,8 @@ vid.addEventListener("ended", () => {
             vid.style.filter = `hue-rotate(${Math.floor(Math.random() * 361)}deg)`;
             if(vid.style.display !="none") {
                 mainHeader.innerText = headersArray[headerNumber];
-                headersArray[headerNumber] != "jjcreator" ? mainHeader.style.top = "30%":mainHeader.style.top = "28%"
-                mainHeader.style.color = colors[headerNumber];
+                headersArray[headerNumber] != "jjcreator" ? mainHeader.style.top = "30%": mainHeader.style.top = "28%";
+                mainHeader.style.color = headersArray[headerNumber] != "jjcreator" ? "#000" : "#fff";
             }
         }
         played2times = !played2times;
